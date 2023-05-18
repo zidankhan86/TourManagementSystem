@@ -205,7 +205,7 @@
                                                 <img class="testimonial-author-img"
                                                     src="images/avatar/1.jpg" alt="" />
                                                 <div class="testimonial-author">TYRION LANNISTER</div>
-                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                <div class="testimonial-author-position">
                                                 </div>
                                             </div>
                                         </div>

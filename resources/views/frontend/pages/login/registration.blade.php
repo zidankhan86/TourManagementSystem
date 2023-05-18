@@ -24,7 +24,7 @@
 	transform: rotate(0);
 }
 .login article {
-	
+
 }
 .login .form-group {
 	margin-bottom:17px;
@@ -117,6 +117,9 @@
 											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
 											<input type="password" name="password" class="form-control" placeholder=" Password">
 										</div>
+                                        <div>
+                                            <input type="hidden" name="role">
+                                        </div>
 									</div>
 									  <button type="submit" class="btn btn-success btn-block">Submit</button>
 								</form>

@@ -43,8 +43,10 @@ Route::get('/login/form',[AuthController::class,'loginForm'])->name('login.form'
 Route::post('/login/process',[AuthController::class,'loginProcess'])->name('login');
 
 //Backend
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 
- Route::get('/admin',[HomeController::class,'home'])->name('home');
+
+ Route::get('/',[HomeController::class,'home'])->name('home');
  Route::get('/tour/list',[TourController::class,'tourList'])->name('tour.list');
  Route::get('/tour/form',[TourController::class,'tourForm'])->name('tour.form');
  Route::post('/tour/store',[TourController::class,'tourStore'])->name('tour.store');
@@ -52,4 +54,4 @@ Route::post('/login/process',[AuthController::class,'loginProcess'])->name('logi
  Route::get('/tour/support/form',[TourSupportController::class,'tourSupport'])->name('tour.support.form');
  Route::post('/tour/support/store',[TourSupportController::class,'tourSupportStore'])->name('tour.support.store');
  Route::get('/tour/support/list',[TourSupportController::class,'tourSupportList'])->name('tour.support.list');
-
+});

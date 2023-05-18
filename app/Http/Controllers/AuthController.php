@@ -30,10 +30,11 @@ class AuthController extends Controller
             "phone"=>$request->phone,
             "address"=>$request->address,
             "password"=>bcrypt($request->password),
+            "role"=>"role",
 
         ]);
-       
-        return back();
+
+        return to_route('landing.page');
 
     }
 
