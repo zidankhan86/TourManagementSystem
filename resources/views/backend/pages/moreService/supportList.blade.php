@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
+      <th scope="col">Image</th>
       <th scope="col">Tittle</th>
       <th scope="col">Vehicle Name</th>
       <th scope="col">Price</th>
@@ -21,6 +22,7 @@
 
     <tr>
       <th scope="row">{{ $tour->id }}</th>
+      <th><img width="50" height="50" src="{{ url('/uploads/uploads/'.$tour->image) }}" alt=""></th>
       <td>{{ $tour->tittle }}</td>
       <td>{{ $tour->v_name }}</td>
       <td>{{ $tour->price }}</td>

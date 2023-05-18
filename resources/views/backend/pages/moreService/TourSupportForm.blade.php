@@ -29,11 +29,17 @@
         <input type="text" name="location_for" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
 
       </div>
+
+      <div class="form-group">
+        <label for="exampleInput">Enter Image</label>
+        <input type="file" name="image" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
+      </div>
+
       <div class="form-group">
         <label for="exampleInputName3">Enter Status</label>
         <input type="status" name="status" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
       </div>
-     
+
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

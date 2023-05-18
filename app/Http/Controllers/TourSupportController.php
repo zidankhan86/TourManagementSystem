@@ -22,9 +22,21 @@ class TourSupportController extends Controller
 
         ]);
 
+
+
         //dd($request->all());
 
+
+        $imageName = null;
+        if($request->hasFile('image')){
+
+           $imageName = date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
+           $request->file('image')->storeAs('/uploads',$imageName);
+        }
+
         TourSupport::create([
+
+
 
             "tittle"=>$request->tittle,
             "v_name"=>$request->v_name,
@@ -32,7 +44,7 @@ class TourSupportController extends Controller
             "price"=>$request->price,
             "location_for"=>$request->location_for,
             "status"=>$request->status,
-            "image"=>$request->image,
+            "image"=>$imageName,
 
         ]);
 

@@ -26,6 +26,13 @@ class TourController extends Controller
 
         ]);
 
+        $imageName = null;
+        if($request->hasFile('image')){
+
+           $imageName = date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
+           $request->file('image')->storeAs('/uploads',$imageName);
+        }
+
 
 
         // dd($request->all());
@@ -34,7 +41,7 @@ class TourController extends Controller
             "price"=>$request->price,
             "description"=>$request->description,
             "duration"=>$request->duration,
-            "image"=>$request->image,
+            "image"=>$imageName,
             "from_date"=>$request->from_date,
             "to_date"=>$request->to_date
 
