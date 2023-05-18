@@ -129,8 +129,10 @@
                                     <li><i class="fas fa-map-marker-alt"></i>{{ $tour->location }}</li>
                                 </ul>
                             </div>
+
+                            <a href="{{route('tour.view.details',$tour->id) }}" class="btn btn-yellow">View Details</a>
                         </div>
-                        <a href="">View Details</a>
+                        
                     </div>
                 </div>
 

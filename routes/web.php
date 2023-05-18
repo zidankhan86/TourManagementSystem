@@ -26,9 +26,11 @@ Route::get('/', function () {
 Route::get('/',[FrontendHomeController::class,'landing'])->name('landing.page');
 Route::get('/tour/page',[FrontendTourController::class,'tours'])->name('tour.package.page');
 Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport'])->name('tour.support.package');
+Route::get('/tour/support/view/details/{id}',[FrontendTourController::class,'supportDetails'])->name('more.support.view.details');
 Route::get('/tour/view/details/{id}',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
 Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
 Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
+
 
 //Auth
 

@@ -31,6 +31,13 @@ public function bookNow(){
 
 public function bookNowStore(Request $request){
 
+    $request->validate([
+
+        'name'=>'required',
+        'phone'=>'required',
+
+    ]);
+
     //dd($request->all());
 
     Book::create([
