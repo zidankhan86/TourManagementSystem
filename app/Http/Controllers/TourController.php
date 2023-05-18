@@ -35,11 +35,13 @@ class TourController extends Controller
             "description"=>$request->description,
             "duration"=>$request->duration,
             "image"=>$request->image,
+            "from_date"=>$request->from_date,
+            "to_date"=>$request->to_date
 
 
         ]);
 
-        return back();
+        return redirect()->back()->with("message","Success");
 
     }
 
