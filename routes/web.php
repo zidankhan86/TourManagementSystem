@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::get('/',[FrontendHomeController::class,'landing'])->name('landing.page');
 Route::get('/tour/page',[FrontendTourController::class,'tours'])->name('tour.package.page');
 Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport'])->name('tour.support.package');
-Route::get('/tour/view/details',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
+Route::get('/tour/view/details/{id}',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
 //Auth
 
 

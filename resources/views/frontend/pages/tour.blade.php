@@ -36,7 +36,7 @@
                         </div>
 
                     </div>
-                    <a href="{{route ('tour.view.details') }}" class="btn btn-info">View Details</a>
+                    <a href="{{route ('tour.view.details',$tour->id) }}" class="btn btn-info">View Details</a>
                 </div>
             </div>
 
