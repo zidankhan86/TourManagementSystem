@@ -19,4 +19,8 @@ class TourController extends Controller
        $tours = TourSupport::all();
         return view('frontend.pages.tourSupport',compact('tours'));
     }
+public function viewDetails(){
+    return view('frontend.pages.viewMore.view Details');
+}
+
 }

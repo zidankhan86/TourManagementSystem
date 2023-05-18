@@ -130,6 +130,7 @@
                                 </ul>
                             </div>
                         </div>
+                        <a href="">View Details</a>
                     </div>
                 </div>
 
