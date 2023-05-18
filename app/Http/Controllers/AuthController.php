@@ -57,12 +57,12 @@ class AuthController extends Controller
 
 
 }
-// public function Logout_frontend(){
-//         Auth::logout();
+public function logout(){
+        Auth::logout();
 
-//         return redirect()->route('home');
+        return redirect()->route('landing.page');
 
-// }
+}
 
 
 }

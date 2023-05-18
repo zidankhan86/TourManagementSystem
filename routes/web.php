@@ -41,7 +41,7 @@ Route::get('/registration',[AuthController::class,'registration'])->name('regist
 Route::post('/registration/store',[AuthController::class,'registrationStore'])->name('registration.website.store');
 Route::get('/login/form',[AuthController::class,'loginForm'])->name('login.form');
 Route::post('/login/process',[AuthController::class,'loginProcess'])->name('login');
-
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 //Backend
 Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 
