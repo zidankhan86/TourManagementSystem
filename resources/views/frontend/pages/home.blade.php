@@ -274,42 +274,50 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="{{url ('frontend/assets/img/blog/home-blog1.jpg') }}" alt="">
-                            </div>
-                            <div class="blog-cap">
-                                <p> |   Traveling</p>
-                                <h3><a href="single-blog.html">Tips For Taking A Long-Term Trip With Kids.</a></h3>
-                                <a href="#" class="more-btn">Read more »</a>
-                            </div>
+
+
+               <div class="home-blog-area section-padding2">
+    <div class="container">
+        <!-- Section Tittle -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-tittle text-center">
+                    <span>Our Recent Package</span>
+                    <h2> Tour Support Package</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach ($tourSupport as $tour)
+
+
+            <div class="col-xl-3 col-lg-4 col-md-4">
+                <div class="home-blog-single mb-30">
+                    <div class="blog-img-cap">
+                        <div class="blog-img">
+                            <img src="{{url ('/uploads/uploads',$tour->image) }}" alt="">
                         </div>
-                        <div class="blog-date text-center">
-                            <span>24</span>
-                            <p>Now</p>
+                        <div class="blog-cap">
+                            <p>{{ $tour->tittle }}</p>
+                            <p>Vehicle :{{$tour->location_for}}</p>
+                            <p>Location {{$tour->location_for}}</p>
+                            <p>Fee: {{ $tour->price }} BDT /Hour</p>
+                            <a href="#" class="more-btn">Read more »</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="{{url ('/frontend/assets/img/blog/home-blog2.jpg') }}" alt="">
-                            </div>
-                            <div class="blog-cap">
-                                <p> |   Traveling</p>
-                                <h3><a href="single-blog.html">Tips For Taking A Long-Term Trip With Kids.</a></h3>
-                                <a href="#" class="more-btn">Read more »</a>
-                            </div>
-                        </div>
-                        <div class="blog-date text-center">
-                            <span>24</span>
-                            <p>Now</p>
-                        </div>
+                    <div class="blog-date text-center">
+                        <a href="">View Details</a>
                     </div>
                 </div>
+            </div>
+            @endforeach
+
+
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     </div>
