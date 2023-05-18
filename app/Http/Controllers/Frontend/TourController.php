@@ -24,4 +24,8 @@ public function viewDetails($id){
     return view('frontend.pages.viewMore.viewDetails',compact('toursData'));
 }
 
+public function bookNow(){
+    return view('frontend.pages.bookNow.bookNow');
+}
+
 }
