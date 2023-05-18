@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\TourController as FrontendTourController;
 use App\Http\Controllers\HomeController;
@@ -33,7 +34,8 @@ Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->
 
 
 //Auth
-
+Route::get('/registration',[AuthController::class,'registration'])->name('registration.website');
+Route::post('/registration/store',[AuthController::class,'registrationStore'])->name('registration.website.store');
 
 
 //Backend
