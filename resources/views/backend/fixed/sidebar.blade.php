@@ -14,6 +14,17 @@
                 <li><a href="{{route ('tour.list') }}"><i class="ti-bar-chart-alt"></i> Tour</a>
 
                 </li>
+
+
+                <li><a class="sidebar-sub-toggle"><i class="ti-target"></i> Support Package <span
+                    class="sidebar-collapse-icon ti-angle-down"></span></a>
+            <ul>
+                <li><a href="{{route ('tour.support.form') }}">Add Support Package</a></li>
+                <li><a href="page-register.html">Support Package List</a></li>
+
+            </ul>
+        </li>
+
                 <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>
                 <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li>
                 <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>

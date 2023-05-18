@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('tour_supports', function (Blueprint $table) {
             $table->id();
+            $table->string('tittle');
+            $table->string('v_name');
+            $table->text('description');
+            $table->double('price');
+            $table->string('location_for');
+            $table->string('status');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
