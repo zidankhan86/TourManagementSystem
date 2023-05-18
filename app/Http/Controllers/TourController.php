@@ -22,7 +22,8 @@ class TourController extends Controller
 
             "tittle"=>'required',
             "price"=>'required',
-            "description"=>'required'
+            "description"=>'required',
+            "location"=>'required'
 
         ]);
 
@@ -38,6 +39,7 @@ class TourController extends Controller
         // dd($request->all());
         Tour::create([
             "tittle"=>$request->tittle,
+            "location"=>$request->location,
             "price"=>$request->price,
             "description"=>$request->description,
             "duration"=>$request->duration,

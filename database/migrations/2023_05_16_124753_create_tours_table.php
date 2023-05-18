@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->string('tittle');
+            $table->string('location');
             $table->double('price');
             $table->text('description');
             $table->string('duration');

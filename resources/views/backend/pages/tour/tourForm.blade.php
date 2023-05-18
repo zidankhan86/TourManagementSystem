@@ -2,12 +2,17 @@
 @section('main')
 <form action="{{route ('tour.store') }}" method="post" enctype="multipart/form-data">
     @csrf
-    
+
     <div class="form-group">
       <label for="exampleInputName">Enter Tittle</label>
       <input type="text" name="tittle" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
 
     </div>
+    <div class="form-group">
+        <label for="exampleInputName3">Enter Location</label>
+        <input type="text" name="location" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
+
+      </div>
     <div class="form-group">
         <label for="exampleInputPrice">Enter Price</label>
         <input type="number" name="price" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
@@ -37,6 +42,7 @@
         <label for="exampleInputTime">Enter To Date</label>
         <input type="datetime-local" name="to_date" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
       </div>
+
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
