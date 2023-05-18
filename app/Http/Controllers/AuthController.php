@@ -30,7 +30,7 @@ class AuthController extends Controller
             "phone"=>$request->phone,
             "address"=>$request->address,
             "password"=>bcrypt($request->password),
-            "role"=>"role",
+            "role"=>"customer",
 
         ]);
 
@@ -45,7 +45,7 @@ class AuthController extends Controller
     public function loginProcess(Request $request){
 
 //dd($request->all());
-    $credential = $request->except('_token');
+    $credential = $request->only(['email','password']);
 
     if(Auth::attempt($credential))
     {
@@ -53,7 +53,7 @@ class AuthController extends Controller
         return redirect()->route('home');
     }
 
-    return redirect()->route('home');
+    return redirect()->back();
 
 
 }
@@ -63,6 +63,5 @@ public function logout(){
         return redirect()->route('landing.page');
 
 }
-
 
 }

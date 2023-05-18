@@ -36,14 +36,20 @@ Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('to
 Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
 
 
-//Auth
+//Auth Frontend
+
 Route::get('/registration',[AuthController::class,'registration'])->name('registration.website');
 Route::post('/registration/store',[AuthController::class,'registrationStore'])->name('registration.website.store');
-Route::get('/login/form',[AuthController::class,'loginForm'])->name('login.form');
-Route::post('/login/process',[AuthController::class,'loginProcess'])->name('login');
+
+Route::get('/login/form',[AuthController::class,'loginForm'])->name('login');
+
+Route::post('/login/process',[AuthController::class,'loginProcess'])->name('login.process');
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+
 //Backend
-Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
+
+Route::group(['middleware'=>'auth','Admin','prefix'=>'admin'],function(){
 
 
  Route::get('/',[HomeController::class,'home'])->name('home');

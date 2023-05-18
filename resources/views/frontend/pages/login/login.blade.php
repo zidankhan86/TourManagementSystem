@@ -89,7 +89,7 @@ h4 {
 </head>
 <body>
 
-    <form action="{{ route('login') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('login.process') }}" method="post" enctype="multipart/form-data">
 @csrf
 <!-- Page Content -->
 <div class="container">

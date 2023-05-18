@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
             "address"=>"Uttara",
             "phone"=>"01776718178",
             "password"=>bcrypt('12345'),
+            "role"=>'admin'
 
         ]);
     }
