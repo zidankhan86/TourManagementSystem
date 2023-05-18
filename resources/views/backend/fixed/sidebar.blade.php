@@ -20,7 +20,7 @@
                     class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
                 <li><a href="{{route ('tour.support.form') }}">Add Support Package</a></li>
-                <li><a href="page-register.html">Support Package List</a></li>
+                <li><a href="{{route ('tour.support.list') }}">Support Package List</a></li>
 
             </ul>
         </li>

@@ -27,3 +27,5 @@ Route::get('/', function () {
 
  Route::get('/tour/support/form',[TourSupportController::class,'tourSupport'])->name('tour.support.form');
  Route::post('/tour/support/store',[TourSupportController::class,'tourSupportStore'])->name('tour.support.store');
+ Route::get('/tour/support/list',[TourSupportController::class,'tourSupportList'])->name('tour.support.list');
+

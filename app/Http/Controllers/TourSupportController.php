@@ -40,6 +40,11 @@ class TourSupportController extends Controller
 
 
     }
+    public function tourSupportList(){
+
+        $supports = TourSupport::all();
+        return view('backend.pages.moreService.supportList',compact('supports'));
+    }
 
 
 }
