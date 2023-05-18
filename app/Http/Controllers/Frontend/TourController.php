@@ -51,4 +51,9 @@ public function bookNowStore(Request $request){
     return back();
 }
 
+public function supportDetails($id){
+    $toursData = TourSupport::find($id);
+    return view('frontend.pages.viewMore.supportViewDetails',compact('toursData'));
+}
+
 }

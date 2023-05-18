@@ -53,5 +53,6 @@ class TourController extends Controller
         return redirect()->back()->with("message","Success");
 
     }
+    
 
 }

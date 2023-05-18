@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="blog-date text-center">
-                        <a href="">View Details</a>
+                        <a href="{{route ('more.support.view.details',$tour->id) }}">View Details</a>
                     </div>
                 </div>
             </div>
