@@ -12,6 +12,16 @@ class TourSupportController extends Controller
     }
     public function tourSupportStore(Request $request){
 
+
+        $request->validate([
+
+      "tittle"=>'required',
+      "v_name"=>'required',
+      "location_for"=>'required',
+      "price"=>'required',
+
+        ]);
+
         //dd($request->all());
 
         TourSupport::create([
