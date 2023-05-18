@@ -11,7 +11,6 @@
       <th>Image</th>
       <th scope="col">Tittle</th>
       <th scope="col">Price</th>
-      <th scope="col">Description</th>
       <th scope="col">Duration</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
@@ -27,7 +26,6 @@
       <td><img height="50" width="50" src="{{ url('/uploads/uploads/'.$tour->image) }}" alt=""></td>
       <td>{{ $tour->tittle }}</td>
       <td>{{ $tour->price }}</td>
-      <td>{{ $tour->description }}</td>
       <td>{{ $tour->duration }}</td>
       <td>{{ $tour->status }}</td>
       <td>

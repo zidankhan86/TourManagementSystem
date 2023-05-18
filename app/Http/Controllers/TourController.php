@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tour;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TourController extends Controller
 {
@@ -50,9 +51,11 @@ class TourController extends Controller
 
         ]);
 
+        Alert::success('Success Title', 'Chodna Maksud');
+
         return redirect()->back()->with("message","Success");
 
     }
-    
+
 
 }

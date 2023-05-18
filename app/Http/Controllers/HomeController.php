@@ -9,4 +9,8 @@ class HomeController extends Controller
     public function home(){
         return view('backend.pages.home');
     }
+
+    public function hello(){
+        return ('Hello');
+    }
 }

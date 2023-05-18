@@ -36,7 +36,30 @@ class AuthController extends Controller
 
     }
 
-    public function login(){
+    public function loginForm(){
         return view('frontend.pages.login.login');
     }
+
+    public function loginProcess(Request $request){
+
+//dd($request->all());
+    $login = $request->except('_token');
+
+    if(Auth::attempt($login))
+    {
+        return redirect()->back();
+    }
+
+    return redirect()->back();
+
+
+}
+// public function Logout_frontend(){
+//         Auth::logout();
+
+//         return redirect()->route('home');
+
+// }
+
+
 }

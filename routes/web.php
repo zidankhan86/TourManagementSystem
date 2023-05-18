@@ -19,9 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (
+) {
     return view('welcome');
 });
+
+
 
 //Fronted
 Route::get('/',[FrontendHomeController::class,'landing'])->name('landing.page');
@@ -36,7 +39,8 @@ Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->
 //Auth
 Route::get('/registration',[AuthController::class,'registration'])->name('registration.website');
 Route::post('/registration/store',[AuthController::class,'registrationStore'])->name('registration.website.store');
-Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::get('/login/form',[AuthController::class,'loginForm'])->name('login.form');
+Route::post('/login/process',[AuthController::class,'loginProcess'])->name('login');
 
 //Backend
 

@@ -7,6 +7,9 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <body>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        @csrf
     <div id="login">
         <h3 class="text-center text-white pt-5">Login form</h3>
         <div class="container">
@@ -37,5 +40,6 @@
         </div>
     </div>
 </body>
+</form>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
