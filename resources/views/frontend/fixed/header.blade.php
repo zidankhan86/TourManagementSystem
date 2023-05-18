@@ -41,7 +41,7 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="{{route('landing.page') }}">Home</a></li>
                                         <li><a href="about.html">About US</a></li>
                                         <li><a href="{{route ('tour.package.page') }}">Package</a></li>
                                         <li><a href="blog.html">Blog</a>
