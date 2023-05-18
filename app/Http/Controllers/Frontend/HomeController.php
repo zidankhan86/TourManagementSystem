@@ -13,4 +13,5 @@ class HomeController extends Controller
         $tours = Tour::all();
         return view('frontend.pages.home',compact('tours'));
     }
+    
 }

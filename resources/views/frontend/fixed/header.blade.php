@@ -43,12 +43,8 @@
                                     <ul id="navigation">
                                         <li><a href="{{route('landing.page') }}">Home</a></li>
                                         <li><a href="about.html">About US</a></li>
-                                        <li><a href="{{route ('tour.package.page') }}">Package</a></li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single-blog.html">Blog Details</a></li>
-                                            </ul>
+                                        <li><a href="{{route ('tour.package.page') }}">Tour</a></li>
+                                        <li><a href="{{route ('tour.support.package') }}">Tour Support</a>
                                         </li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">
@@ -56,7 +52,10 @@
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="contact.html">SignIn</a></li>
+                                        <li><a href="contact.html">SignUp</a></li>
                                     </ul>
+
                                 </nav>
                             </div>
                         </div>
