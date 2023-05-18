@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 use App\Models\Tour;
 use App\Models\TourSupport;
 use Illuminate\Http\Request;
@@ -26,6 +27,21 @@ public function viewDetails($id){
 
 public function bookNow(){
     return view('frontend.pages.bookNow.bookNow');
+}
+
+public function bookNowStore(Request $request){
+
+    //dd($request->all());
+
+    Book::create([
+
+        "name"=>$request->name,
+        "phone"=>$request->phone,
+        "email"=>$request->email,
+        "address"=>$request->address
+
+    ]);
+    return back();
 }
 
 }

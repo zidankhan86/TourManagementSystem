@@ -28,6 +28,7 @@ Route::get('/tour/page',[FrontendTourController::class,'tours'])->name('tour.pac
 Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport'])->name('tour.support.package');
 Route::get('/tour/view/details/{id}',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
 Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
+Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
 
 //Auth
 
