@@ -36,7 +36,7 @@ Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->
 //Auth
 Route::get('/registration',[AuthController::class,'registration'])->name('registration.website');
 Route::post('/registration/store',[AuthController::class,'registrationStore'])->name('registration.website.store');
-
+Route::get('/login',[AuthController::class,'login'])->name('login');
 
 //Backend
 

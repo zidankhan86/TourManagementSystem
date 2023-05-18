@@ -8,9 +8,7 @@
                     <div class="col-lg-8">
                         <div class="header-info-left">
                             <ul>
-                                <li>needhelp@gotrip.com</li>
-                                <li>666 569 025077</li>
-                                <li>broklyn street new york</li>
+                               <p>Tour Management System</p>
                             </ul>
                         </div>
                     </div>
@@ -52,7 +50,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="contact.html">SignIn</a></li>
+                                        <li><a href="{{route ('login') }}">SignIn</a></li>
                                         <li><a href="{{route ('registration.website') }}">SignUp</a></li>
                                     </ul>
 

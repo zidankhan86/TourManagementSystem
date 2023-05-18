@@ -35,4 +35,8 @@ class AuthController extends Controller
         return back();
 
     }
+
+    public function login(){
+        return view('frontend.pages.login.login');
+    }
 }
