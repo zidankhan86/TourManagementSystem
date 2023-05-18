@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\Tour;
 use App\Models\TourSupport;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TourController extends Controller
 {
@@ -48,6 +49,7 @@ public function bookNowStore(Request $request){
         "address"=>$request->address
 
     ]);
+    Alert::success('Success ', 'Thank You For Booking ');
     return back();
 }
 

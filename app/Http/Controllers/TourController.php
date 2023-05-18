@@ -51,7 +51,7 @@ class TourController extends Controller
 
         ]);
 
-        Alert::success('Success Title', 'Chodna Maksud');
+        Alert::success('Success ', 'Tour Added');
 
         return redirect()->back()->with("message","Success");
 

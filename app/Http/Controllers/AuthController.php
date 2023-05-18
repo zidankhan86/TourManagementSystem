@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,7 @@ class AuthController extends Controller
             "password"=>bcrypt($request->password),
 
         ]);
-
+       
         return back();
 
     }
@@ -43,14 +44,15 @@ class AuthController extends Controller
     public function loginProcess(Request $request){
 
 //dd($request->all());
-    $login = $request->except('_token');
+    $credential = $request->except('_token');
 
-    if(Auth::attempt($login))
+    if(Auth::attempt($credential))
     {
-        return redirect()->back();
+
+        return redirect()->route('home');
     }
 
-    return redirect()->back();
+    return redirect()->route('home');
 
 
 }
