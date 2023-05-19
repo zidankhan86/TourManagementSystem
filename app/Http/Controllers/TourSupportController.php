@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TourSupport;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TourSupportController extends Controller
 {
@@ -68,6 +69,31 @@ class TourSupportController extends Controller
 
         $supportEdit = TourSupport::find($id);
         return view('backend.pages.moreService.supportEdit',compact('supportEdit'));
+    }
+
+    public function tourSupportUpdate(Request $request,$id){
+
+        $supportUpdate = TourSupport::find($id);
+        $imageName = null;
+        if($request->hasFile('image')){
+
+           $imageName = date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
+           $request->file('image')->storeAs('/uploads',$imageName);
+        }
+
+
+        $supportUpdate->Update([
+            "tittle"=>$request->tittle,
+            "v_name"=>$request->v_name,
+            "description"=>$request->description,
+            "price"=>$request->price,
+            "location_for"=>$request->location_for,
+            "status"=>$request->status,
+            "image"=>$imageName,
+
+        ]);
+        Alert::success('Success','Updated');
+        return back();
     }
 
 

@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('main')
-<form action="" method="post" enctype="multipart/form-data">
+<form action="{{route('tour.support.update',$supportEdit->id)}}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
@@ -44,7 +44,7 @@
       </div><br>
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Update</button>
   </form>
 
 @endsection
