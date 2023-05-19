@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -92,6 +93,11 @@ public function tourView($id){
 
     return view('backend.pages.tour.view',compact('tourView'));
 
+}
+public function bookingList(){
+
+    $bookings = Book::all();
+    return view('backend.pages.book.booking',compact('bookings'));
 }
 
 

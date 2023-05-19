@@ -72,6 +72,9 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  Route::get('/edit/tour/{id}',[TourController::class,'tourEdit'])->name('tour.edit');
  Route::post('/update/tour/{id}',[TourController::class,'tourUpdate'])->name('tour.update');
  Route::get('/view/tour/{id}',[TourController::class,'tourView'])->name('tour.view');
+
+
+Route::get('/booking/list',[TourController::class,'bookingList'])->name('booking.list');
 });
 
 });
