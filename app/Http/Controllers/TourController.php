@@ -99,6 +99,9 @@ public function bookingList(){
     $bookings = Book::all();
     return view('backend.pages.book.booking',compact('bookings'));
 }
+public function myProfile(){
+    return view('backend.pages.profile.profile');
+}
 
 
 }

@@ -150,38 +150,16 @@
                         </div>
                     </div>
                     <div class="dropdown dib">
-                        <div class="header-icon" data-toggle="dropdown">
-                            <span class="user-avatar">{{ auth()->user()->name }}
-                                <i class="ti-angle-down f-s-10"></i>
-                            </span>
-                            <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-user"></i>
-                                                <span>Profile</span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-email"></i>
-                                                <span>Inbox</span>
-                                            </a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="{{route ('logout') }}">
-                                                <i class="ti-power-off"></i>
-                                                <span>Logout</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div class="dropdown">
+                            <button class="text btn-info" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ auth()->user()->name}}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="{{route ('my.profile') }}">Profile</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="{{route ('logout') }}">Logout</a>
                             </div>
-                        </div>
+                          </div>
                     </div>
                 </div>
             </div>

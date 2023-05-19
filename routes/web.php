@@ -75,6 +75,8 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
 
 
 Route::get('/booking/list',[TourController::class,'bookingList'])->name('booking.list');
+Route::get('/my/profile',[TourController::class,'myProfile'])->name('my.profile');
+
 });
 
 });
