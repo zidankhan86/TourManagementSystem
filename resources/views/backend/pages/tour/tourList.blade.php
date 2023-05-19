@@ -30,7 +30,7 @@
       <td>{{ $tour->status }}</td>
       <td>
         <a href="" class="btn btn-info">View</a>
-        <a href="" class="btn btn-warning">Edit</a>
+        <a href="{{route ('tour.edit',$tour->id) }}" class="btn btn-warning">Edit</a>
         <a href="{{ route('tour.delete',$tour->id) }}" class="btn btn-danger">Delete</a>
       </td>
     </tr>

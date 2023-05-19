@@ -66,6 +66,11 @@ class TourController extends Controller
         return redirect()->back();
     }
 
+    public function tourEdit($id){
+        $tour = Tour::find($id);
+        return view('backend.pages.tour.tourEdit',compact('tour'));
+    }
+
 
 
 }

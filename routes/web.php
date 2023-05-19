@@ -65,6 +65,8 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  Route::get('/tour/support/list',[TourSupportController::class,'tourSupportList'])->name('tour.support.list');
 
  Route::get('/delete/tour/{id}',[TourController::class,'tourDelete'])->name('tour.delete');
+ Route::get('/edit/tour/{id}',[TourController::class,'tourEdit'])->name('tour.edit');
+
 
 });
 
