@@ -26,16 +26,7 @@
                                 <div class="input-form mb-30">
                                     <input type="text" placeholder="When Would you like to go ?">
                                 </div>
-                                <div class="select-form mb-30">
-                                    <div class="select-itms">
-                                        <select name="select" id="select1">
-                                            <option value="">When</option>
-                                            <option value="">Services-1</option>
-                                            <option value="">Services-2</option>
-                                            <option value="">Services-3</option>
-                                        </select>
-                                    </div>
-                                </div>
+
                                 <div class="search-form mb-30">
                                     <a href="#">Search</a>
                                 </div>
@@ -153,7 +144,7 @@
 
                         </div>
                         <p class="pera1">Love where you're going in the perfect time</p>
-                        <p class="pera2">Tripo is a World Leading Online</p>
+                        <p class="pera2">MyTrip in Bangladeshi Leading Online</p>
                         <p class="pera3"> Tour Booking Platform</p>
                     </div>
                 </div>
@@ -221,18 +212,12 @@
                             <div class="testimonial-caption ">
                                 <div class="testimonial-top-cap">
                                     <img src="{{url ('frontend/assets/img/icon/testimonial.png') }}" alt="">
-                                    <p>Logisti Group is a representative logistics operator providing full range of ser
-                                        of customs clearance and transportation worl.</p>
+                                    <p>"Travel opens up a world of possibilities, where new cultures, breathtaking landscapes, and lifelong friendships await."</p>
                                 </div>
                                 <!-- founder -->
                                 <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                                    <div class="founder-img">
-                                        <img src="{{url ('frontend/assets/img/testmonial/Homepage_testi.png') }}" alt="">
-                                    </div>
-                                    <div class="founder-text">
-                                        <span>Jessya Inn</span>
-                                        <p>Co Founder</p>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
