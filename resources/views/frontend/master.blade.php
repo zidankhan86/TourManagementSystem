@@ -21,6 +21,7 @@
             <link rel="stylesheet" href="{{url ('frontend/assets/css/slick.css') }}">
             <link rel="stylesheet" href="{{url ('frontend/assets/css/nice-select.css') }}">
             <link rel="stylesheet" href="{{url ('frontend/assets/css/style.css') }}">
+
    </head>
 
    <body>
@@ -32,7 +33,13 @@
 
 
 
-   @yield('main')
+    @yield('main')
+    @include('sweetalert::alert')
+
+
+
+
+
 
 
 
@@ -80,6 +87,7 @@
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{{url ('frontend/./assets/js/plugins.js') }}"></script>
         <script src="{{url ('frontend/./assets/js/main.js') }}"></script>
+
 
     </body>
 </html>
