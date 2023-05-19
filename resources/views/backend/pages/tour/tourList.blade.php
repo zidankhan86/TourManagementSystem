@@ -31,7 +31,7 @@
       <td>
         <a href="{{route ('tour.view',$tour->id) }}" class="btn btn-info">View</a>
         <a href="{{route ('tour.edit',$tour->id) }}" class="btn btn-warning">Edit</a>
-        <a href="{{ route('tour.delete',$tour->id) }}" class="btn btn-danger">Delete</a>
+        <a href="{{ route('tour.delete',$tour->id) }}" class="btn btn-danger" onclick="return confirm('Do Your Wants to Delete ?')">Delete</a>
       </td>
     </tr>
     @endforeach
