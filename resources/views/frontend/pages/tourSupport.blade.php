@@ -19,17 +19,19 @@
 
 
             <div class="col-xl-3 col-lg-4 col-md-4">
+               <p>{{$tour->tittle  }}</p>
                 <div class="home-blog-single mb-30">
                     <div class="blog-img-cap">
                         <div class="blog-img">
                             <img src="{{url ('/uploads/uploads',$tour->image) }}" alt="">
+
                         </div>
-                        <div class="blog-cap">
-                            <p>{{ $tour->tittle }}</p>
-                            <p>Vehicle :{{$tour->location_for}}</p>
-                            <p>Location {{$tour->location_for}}</p>
-                            <p>Fee: {{ $tour->price }} BDT /Hour</p>
-                            <a href="#" class="more-btn">Read more »</a>
+                        <div class="place-cap-bottom">
+                            <ul>
+                                <li> {{$tour->v_name  }}</li>
+                                <li><i class="far fa-clock"></i>{{ $tour->price }}tk/ Hour</li>
+                                <li><i class="fas fa-map-marker-alt"></i>{{ $tour->location_for }}</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="blog-date text-center">

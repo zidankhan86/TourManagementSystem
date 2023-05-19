@@ -50,7 +50,7 @@ public function bookNowStore(Request $request){
 
     ]);
     Alert::success('Success ', 'Thank You For Booking ');
-    return back();
+    return to_route('landing.page');
 }
 
 public function supportDetails($id){

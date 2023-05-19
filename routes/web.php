@@ -32,8 +32,7 @@ Route::get('/tour/page',[FrontendTourController::class,'tours'])->name('tour.pac
 Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport'])->name('tour.support.package');
 Route::get('/tour/support/view/details/{id}',[FrontendTourController::class,'supportDetails'])->name('more.support.view.details');
 Route::get('/tour/view/details/{id}',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
-Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
-Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
+
 
 
 //Auth Frontend
@@ -50,6 +49,9 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 //Backend
 
 Route::group(['middleware'=>'auth','Admin','prefix'=>'admin'],function(){
+//Booking Frontend
+    Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
+    Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
 
 
  Route::get('/',[HomeController::class,'home'])->name('home');
