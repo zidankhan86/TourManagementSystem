@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
 
 class TourController extends Controller
 {
@@ -20,14 +21,21 @@ class TourController extends Controller
     public function tourStore(Request $request){
 
 
-        $request->validate([
-
+        $validator = Validator::make($request->all(), [
             "tittle"=>'required',
             "price"=>'required',
             "description"=>'required',
-            "location"=>'required'
-
+            "location"=>'required',
+            'from_date' => 'required|date_format:Y-m-d H:i:s',
+            'to_date' => 'required|date_format:Y-m-d H:i:s|after_or_equal:from_date',
         ]);
+
+        if ($validator->fails()) {
+            Alert::error('Error ', 'Invalid Date');
+        } else {
+            Alert::success('Success ', 'Valid Date');
+        }
+
 
         $imageName = null;
         if($request->hasFile('image')){
@@ -80,7 +88,6 @@ class TourController extends Controller
             "description"=>'required',
             "location"=>'required']);
 
-
     $tourUpdate = Tour::find($id);
     $imageName = null;
     if($request->hasFile('image')){
@@ -99,7 +106,6 @@ class TourController extends Controller
         "from_date"=>$request->from_date,
         "to_date"=>$request->to_date
     ]);
-    Alert::success('Success','Updated');
     return redirect()->back();
 }
 

@@ -40,7 +40,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{{route('landing.page') }}">Home</a></li>
-                                        <li><a href="about.html">About US</a></li>
+                                        <li><a href="{{route ('about.us') }}">About US</a></li>
                                         <li><a href="{{route ('tour.package.page') }}">Tour</a></li>
                                         <li><a href="{{route ('tour.support.package') }}">Tour Support</a>
                                         </li>

@@ -15,5 +15,8 @@ class HomeController extends Controller
         $tourSupport = TourSupport::all();
         return view('frontend.pages.home',compact('tours','tourSupport'));
     }
+    public function aboutUs(){
+        return view('frontend.pages.about.about');
+    }
 
 }

@@ -6,7 +6,7 @@
                  <div class="single-footer-caption mb-30">
                       <!-- logo -->
                      <div class="footer-logo">
-                         <a href="index.html"><img src="{{url ('frontend/assets/img/logo/logo2_footer.png') }}" alt=""></a>
+                        <p>MyTrip</p>
                      </div>
                      <div class="footer-tittle">
                          <div class="footer-pera">
