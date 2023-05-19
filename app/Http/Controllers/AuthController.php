@@ -49,14 +49,22 @@ class AuthController extends Controller
 
     if(Auth::attempt($credential))
     {
+if(auth()->user()->role == 'admin' or 'customer'){
+    if(auth()->user()->role == 'admin'){
+
 
         return redirect()->route('home');
+    }else{
+        return redirect()->route('landing.page');
+
+    }
+}
     }
 
-    return redirect()->back();
-
-
 }
+
+
+
 public function logout(){
         Auth::logout();
 

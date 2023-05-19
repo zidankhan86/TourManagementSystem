@@ -44,14 +44,19 @@
                                         <li><a href="{{route ('tour.package.page') }}">Tour</a></li>
                                         <li><a href="{{route ('tour.support.package') }}">Tour Support</a>
                                         </li>
-                                        <li><a href="#">Pages</a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">Element</a></li>
-                                            </ul>
-                                        </li>
+
                                         <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="{{route ('login') }}">SignIn</a></li>
-                                        <li><a href="{{route ('registration.website') }}">SignUp</a></li>
+
+                                        @auth
+                                       @if (auth()->user()->role=='customer')
+                                       <li><a href="{{route ('logout') }}" style="color: brown">Logout</a></li>
+                                       @endif
+
+                                       @else
+                                        <li><a href="{{route ('login') }}" style="color: brown">SignIn</a></li>
+                                        <li><a href="{{route ('registration.website') }}" style="color: blueviolet">SignUp</a></li>
+
+                                        @endauth
                                     </ul>
 
                                 </nav>
