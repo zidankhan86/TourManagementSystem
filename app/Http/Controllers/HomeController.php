@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Tour;
 use App\Models\TourSupport;
 use App\Models\User;
@@ -13,7 +14,8 @@ class HomeController extends Controller
         $totalTour = Tour::get()->count();
         $totalSupportTour = TourSupport::get()->count();
         $totalUser = User::get()->count();
-        return view('backend.pages.home',compact('totalTour','totalSupportTour','totalUser'));
+        $totalBooking =Book::get()->count();
+        return view('backend.pages.home',compact('totalTour','totalSupportTour','totalUser','totalBooking'));
     }
 
 

@@ -60,9 +60,9 @@ body{
                     <a href="{{ route('tour.book.now',$toursData->id) }}" class="btn btn-primary btn-rounded">Book Now</a>
                     <h3 class="box-title mt-5">Key Highlights</h3>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-success"></i>Sturdy structure</li>
-                        <li><i class="fa fa-check text-success"></i>Designed to foster easy portability</li>
-                        <li><i class="fa fa-check text-success"></i>Perfect furniture to flaunt your wonderful collectibles</li>
+                        <li><i class="fa fa-check text-success"></i>Whether you're a thrill-seeker</li>
+                        <li><i class="fa fa-check text-success"></i>leaving you with cherished memories</li>
+                        <li><i class="fa fa-check text-success"></i>Travel opens up a world of possibilities</li>
                     </ul>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">

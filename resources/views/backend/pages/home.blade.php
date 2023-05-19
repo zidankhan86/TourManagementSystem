@@ -59,7 +59,7 @@
                             <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
                             </div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Total Usere</div>
+                                <div class="stat-text">Total User</div>
                                 <div class="stat-digit">{{ $totalUser }}</div>
                             </div>
                         </div>
@@ -70,8 +70,8 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Referral</div>
-                                <div class="stat-digit">2,781</div>
+                                <div class="stat-text">Total Booking</div>
+                                <div class="stat-digit">{{ $totalBooking }}</div>
                             </div>
                         </div>
                     </div>
