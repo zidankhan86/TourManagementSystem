@@ -58,11 +58,11 @@ body{
                     </h2>
 
                     <a href="{{ route('tour.book.now') }}" class="btn btn-primary btn-rounded">Book Now</a>
-                    <h3 class="box-title mt-5">Key Highlights</h3>
+                    <h3 class="box-title mt-5">Why Tour ?</h3>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-success"></i>Sturdy structure</li>
-                        <li><i class="fa fa-check text-success"></i>Designed to foster easy portability</li>
-                        <li><i class="fa fa-check text-success"></i>Perfect furniture to flaunt your wonderful collectibles</li>
+                        <li><i class="fa fa-check text-success"></i>Traveling is the only thing you can buy that makes you richer</li>
+                        <li><i class="fa fa-check text-success"></i>Life is short, and the world is wide</li>
+                        <li><i class="fa fa-check text-success"></i>Every journey brings new experiences</li>
                     </ul>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">

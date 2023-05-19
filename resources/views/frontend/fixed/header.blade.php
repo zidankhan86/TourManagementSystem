@@ -31,7 +31,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                              <a href="index.html"><img src="{{url ('/frontend/assets/img/logo/logo.png') }}" alt=""></a>
+                              <h4  style="color:rgb(5, 56, 71)">MyTrip.com</h4>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">

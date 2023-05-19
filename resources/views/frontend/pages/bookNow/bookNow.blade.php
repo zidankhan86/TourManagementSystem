@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('main')
 
-<form action="{{ route('tour.book.now.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{route ('tour.book.now.store') }}" method="post" enctype="multipart/form-data">
     @csrf
 
 <section class="order-form m-4">
@@ -58,6 +58,9 @@
                             <label class="form-label" for="form5">Street Address</label>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <input type="hidden" name="price">
                 </div>
 
                 <div class="row mt-3 mx-4">

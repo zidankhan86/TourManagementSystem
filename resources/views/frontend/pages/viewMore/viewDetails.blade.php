@@ -57,7 +57,7 @@ body{
                     Tour Cost - {{ $toursData->price }} Tk /Person
                     </h2>
 
-                    <a href="{{ route('tour.book.now') }}" class="btn btn-primary btn-rounded">Book Now</a>
+                    <a href="{{ route('tour.book.now',$toursData->id) }}" class="btn btn-primary btn-rounded">Book Now</a>
                     <h3 class="box-title mt-5">Key Highlights</h3>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-check text-success"></i>Sturdy structure</li>

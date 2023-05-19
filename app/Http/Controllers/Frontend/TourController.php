@@ -27,6 +27,8 @@ public function viewDetails($id){
 }
 
 public function bookNow(){
+
+
     return view('frontend.pages.bookNow.bookNow');
 }
 
@@ -46,7 +48,8 @@ public function bookNowStore(Request $request){
         "name"=>$request->name,
         "phone"=>$request->phone,
         "email"=>$request->email,
-        "address"=>$request->address
+        "address"=>$request->address,
+        "status"=>"Pending"
 
     ]);
     Alert::success('Success ', 'Thank You For Booking ');

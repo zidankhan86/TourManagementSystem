@@ -48,6 +48,7 @@ class TourSupportController extends Controller
             "image"=>$imageName,
 
         ]);
+        Alert::success('Success','Tour Support Created');
 
         return back();
 
@@ -83,7 +84,7 @@ class TourSupportController extends Controller
             "price"=>'required',
 
               ]);
-              
+
         $supportUpdate = TourSupport::find($id);
         $imageName = null;
         if($request->hasFile('image')){

@@ -1,12 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
-use App\Http\Controllers\Frontend\TourController as FrontendTourController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TourSupportController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\TourController as FrontendTourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,17 @@ Route::get('/', function (
 ) {
     return view('welcome');
 });
+
+// SSLCOMMERZ Start
+
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+//SSLCOMMERZ END
+
 
 
 
