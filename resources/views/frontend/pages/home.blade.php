@@ -132,7 +132,7 @@
 
                             <a href="{{route('tour.view.details',$tour->id) }}" class="btn btn-yellow">View Details</a>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -300,7 +300,7 @@
                         <div class="blog-img">
                             <img src="{{url ('/uploads/uploads',$tour->image) }}" alt="">
                         </div>
-                        <div class="blog-cap">
+                        <div class="">
                             <p>{{ $tour->tittle }}</p>
                             <p>Vehicle :{{$tour->location_for}}</p>
                             <p>Location {{$tour->location_for}}</p>

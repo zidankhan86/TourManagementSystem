@@ -48,12 +48,12 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 //Backend
 
-Route::group(['middleware'=>'auth','Admin','prefix'=>'admin'],function(){
+Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
 //Booking Frontend
     Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
     Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
 
-
+    Route::group(['middleware'=>'admin'],function(){
  Route::get('/',[HomeController::class,'home'])->name('home');
  Route::get('/tour/list',[TourController::class,'tourList'])->name('tour.list');
  Route::get('/tour/form',[TourController::class,'tourForm'])->name('tour.form');
@@ -62,4 +62,6 @@ Route::group(['middleware'=>'auth','Admin','prefix'=>'admin'],function(){
  Route::get('/tour/support/form',[TourSupportController::class,'tourSupport'])->name('tour.support.form');
  Route::post('/tour/support/store',[TourSupportController::class,'tourSupportStore'])->name('tour.support.store');
  Route::get('/tour/support/list',[TourSupportController::class,'tourSupportList'])->name('tour.support.list');
+
+});
 });
