@@ -66,6 +66,7 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  Route::get('/tour/support/delete/{id}',[TourSupportController::class,'tourSupportDelete'])->name('tour.support.delete');
  Route::get('/tour/support/edit/{id}',[TourSupportController::class,'tourSupportEdit'])->name('tour.support.edit');
  Route::post('/tour/support/update/{id}',[TourSupportController::class,'tourSupportUpdate'])->name('tour.support.update');
+ Route::get('/tour/support/view/{id}',[TourSupportController::class,'tourSupportView'])->name('tour.support.view');
 
  Route::get('/delete/tour/{id}',[TourController::class,'tourDelete'])->name('tour.delete');
  Route::get('/edit/tour/{id}',[TourController::class,'tourEdit'])->name('tour.edit');

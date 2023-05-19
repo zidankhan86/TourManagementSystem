@@ -96,5 +96,11 @@ class TourSupportController extends Controller
         return back();
     }
 
+    public function tourSupportView($id){
+
+        $SupportView = TourSupport::find($id);
+        return view('backend.pages.moreService.supportview',compact('SupportView'));
+    }
+
 
 }

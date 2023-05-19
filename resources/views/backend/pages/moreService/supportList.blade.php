@@ -29,7 +29,7 @@
       <td>{{ $tour->location }}</td>
       <td>{{ $tour->status }}</td>
       <td>
-        <a href="" class="btn btn-info">View</a>
+        <a href="{{route ('tour.support.view',$tour->id) }}" class="btn btn-info">View</a>
         <a href="{{route ('tour.support.edit',$tour->id) }}" class="btn btn-warning">Edit</a>
         <a href="{{route ('tour.support.delete',$tour->id) }}" class="btn btn-danger">Delete</a>
       </td>
