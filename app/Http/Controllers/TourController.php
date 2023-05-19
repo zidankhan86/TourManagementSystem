@@ -70,7 +70,20 @@ class TourController extends Controller
         $tour = Tour::find($id);
         return view('backend.pages.tour.tourEdit',compact('tour'));
     }
-
+public function tourUpdate(Request $request ,$id){
+    $tourUpdate = Tour::find($id);
+    $tourUpdate->Update([
+        "tittle"=>$request->tittle,
+        "location"=>$request->location,
+        "price"=>$request->price,
+        "description"=>$request->description,
+        "duration"=>$request->duration,
+        "image"=>$request->image,
+        "from_date"=>$request->from_date,
+        "to_date"=>$request->to_date
+    ]);
+    return redirect()->back();
+}
 
 
 }

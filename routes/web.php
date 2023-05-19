@@ -66,7 +66,7 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
 
  Route::get('/delete/tour/{id}',[TourController::class,'tourDelete'])->name('tour.delete');
  Route::get('/edit/tour/{id}',[TourController::class,'tourEdit'])->name('tour.edit');
-
+ Route::post('/update/tour/{id}',[TourController::class,'tourUpdate'])->name('tour.update');
 
 });
 
