@@ -73,6 +73,17 @@ class TourSupportController extends Controller
 
     public function tourSupportUpdate(Request $request,$id){
 
+
+
+        $request->validate([
+
+            "tittle"=>'required',
+            "v_name"=>'required',
+            "location_for"=>'required',
+            "price"=>'required',
+
+              ]);
+              
         $supportUpdate = TourSupport::find($id);
         $imageName = null;
         if($request->hasFile('image')){

@@ -71,18 +71,35 @@ class TourController extends Controller
         $tour = Tour::find($id);
         return view('backend.pages.tour.tourEdit',compact('tour'));
     }
-public function tourUpdate(Request $request ,$id){
+    public function tourUpdate(Request $request ,$id){
+
+        $request->validate([
+
+            "tittle"=>'required',
+            "price"=>'required',
+            "description"=>'required',
+            "location"=>'required']);
+
+
     $tourUpdate = Tour::find($id);
+    $imageName = null;
+    if($request->hasFile('image')){
+
+       $imageName = date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
+       $request->file('image')->storeAs('/uploads',$imageName);
+    }
+
     $tourUpdate->Update([
         "tittle"=>$request->tittle,
         "location"=>$request->location,
         "price"=>$request->price,
         "description"=>$request->description,
         "duration"=>$request->duration,
-        "image"=>$request->image,
+        "image"=>$imageName,
         "from_date"=>$request->from_date,
         "to_date"=>$request->to_date
     ]);
+    Alert::success('Success','Updated');
     return redirect()->back();
 }
 
