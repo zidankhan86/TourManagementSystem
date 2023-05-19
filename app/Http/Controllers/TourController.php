@@ -85,5 +85,14 @@ public function tourUpdate(Request $request ,$id){
     return redirect()->back();
 }
 
+public function tourView($id){
+
+    $tourView = Tour::find($id);
+
+
+    return view('backend.pages.tour.view',compact('tourView'));
+
+}
+
 
 }
