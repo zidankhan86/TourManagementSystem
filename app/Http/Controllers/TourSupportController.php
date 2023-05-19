@@ -58,5 +58,11 @@ class TourSupportController extends Controller
         return view('backend.pages.moreService.supportList',compact('supports'));
     }
 
+    public function tourSupportDelete($id){
+        $supportDelete = TourSupport::find($id)->delete();
+
+        return back();
+    }
+
 
 }
