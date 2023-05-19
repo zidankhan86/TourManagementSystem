@@ -54,6 +54,7 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
     Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
 
     Route::group(['middleware'=>'admin'],function(){
+
  Route::get('/',[HomeController::class,'home'])->name('home');
  Route::get('/tour/list',[TourController::class,'tourList'])->name('tour.list');
  Route::get('/tour/form',[TourController::class,'tourForm'])->name('tour.form');
@@ -63,5 +64,8 @@ Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  Route::post('/tour/support/store',[TourSupportController::class,'tourSupportStore'])->name('tour.support.store');
  Route::get('/tour/support/list',[TourSupportController::class,'tourSupportList'])->name('tour.support.list');
 
+ Route::get('/delete/tour/{id}',[TourController::class,'tourDelete'])->name('tour.delete');
+
 });
+
 });

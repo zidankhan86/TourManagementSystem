@@ -57,5 +57,15 @@ class TourController extends Controller
 
     }
 
+    public function tourDelete($id){
+
+        $deleteTour = Tour::find($id)->delete();
+
+
+        Alert::success('Success','Deleted');
+        return redirect()->back();
+    }
+
+
 
 }
