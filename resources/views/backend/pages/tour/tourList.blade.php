@@ -12,6 +12,7 @@
       <th scope="col">Tittle</th>
       <th scope="col">Price</th>
       <th scope="col">Duration</th>
+      <th scope="col">Seat Left</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -27,6 +28,7 @@
       <td>{{ $tour->tittle }}</td>
       <td>{{ $tour->price }}</td>
       <td>{{ $tour->duration }}</td>
+      <td>{{ $tour->seat_count }}</td>
       <td>{{ $tour->status }}</td>
       <td>
         <a href="{{route ('tour.view',$tour->id) }}" class="btn btn-info">View</a>
