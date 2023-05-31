@@ -43,15 +43,15 @@ public function bookNowStore(Request $request ,$id){
 
     ]);
 
-    dd($request->all());
+    //dd($request->all());
 
-    // $tourId = $request->input('tour_id'); // Assuming you have a hidden input field with the tour ID in your form
-    // $tour = Tour::findOrFail($id);
+    $id = $request->input('tour_id'); // Assuming you have a hidden input field with the tour ID in your form
+    $tour = Tour::findOrFail($id);
 
-    // if ($tour->seat_count > 0) {
-    //     $tour->seat_count--;
-    //     $tour->save();
-    // }
+    if ($tour->seat_count > 0) {
+        $tour->seat_count--;
+        $tour->save();
+    }
 
     Book::create([
 
