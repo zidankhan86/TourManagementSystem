@@ -8,6 +8,7 @@ use App\Http\Controllers\TourSupportController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\TourController as FrontendTourController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +27,18 @@ Route::get('/', function (
 });
 
 // SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
+Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 
-Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
-
 
 
 
@@ -45,6 +49,9 @@ Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport
 Route::get('/tour/support/view/details/{id}',[FrontendTourController::class,'supportDetails'])->name('more.support.view.details');
 Route::get('/tour/view/details/{id}',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
 Route::get('/home/about',[FrontendHomeController::class,'aboutUs'])->name('about.us');
+
+//Notify
+Route::get('/notification',[NotificationController::class,'notification'])->name('get.notification');
 
 
 //Auth Frontend
@@ -62,7 +69,7 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
 //Booking Frontend
-    Route::get('/tour/book/now',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
+    Route::get('/tour/book/now/{id}',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
     Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
 
     Route::group(['middleware'=>'admin'],function(){

@@ -26,10 +26,12 @@ public function viewDetails($id){
     return view('frontend.pages.viewMore.viewDetails',compact('toursData'));
 }
 
-public function bookNow(){
+public function bookNow($id){
+
+    $tours  = Tour::find($id);
 
 
-    return view('frontend.pages.bookNow.bookNow');
+    return view('frontend.pages.bookNow.bookNow',compact('tours'));
 }
 
 public function bookNowStore(Request $request){
@@ -49,6 +51,8 @@ public function bookNowStore(Request $request){
         "phone"=>$request->phone,
         "email"=>$request->email,
         "address"=>$request->address,
+        "price" =>$request->amount,
+        "currency" =>$request->currency,
         "status"=>"Pending"
 
     ]);

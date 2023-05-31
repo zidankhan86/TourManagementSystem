@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
+            $table->string('transaction_id');
+            $table->string('amount');
+            $table->string('currency');
             $table->string('status');
             $table->timestamps();
         });

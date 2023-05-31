@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('main')
 
-<form action="{{route ('tour.book.now.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{route ('pay.now',$tours->id) }}" method="post" enctype="multipart/form-data">
     @csrf
 
 <section class="order-form m-4">
@@ -47,6 +47,9 @@
                             <input type="email" name="email" id="form4" class="form-control order-form-input" />
                         </div>
                     </div>
+                    <div>
+                        <input type="hidden" name="price">
+                    </div>
                 </div>
                 <div class="row mt-3 mx-4">
                     <div class="col-12">
@@ -60,7 +63,11 @@
                     </div>
                 </div>
                 <div>
-                    <input type="hidden" name="price">
+                    <input type="hidden" name="price" value="{{ $tours->price }}">
+                </div>
+
+                <div>
+                    <input type="hidden" name="currency" value="{{ $tours->currency }}">
                 </div>
 
                 <div class="row mt-3 mx-4">

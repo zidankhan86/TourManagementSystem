@@ -34,6 +34,7 @@ class AuthController extends Controller
 
         ]);
 
+Alert()->success('Success','Registration');
         return to_route('landing.page');
 
     }
@@ -53,6 +54,8 @@ if(auth()->user()->role == 'admin' or 'customer'){
     if(auth()->user()->role == 'admin'){
 
 
+        Alert()->success('Success','Login');
+
         return redirect()->route('home');
     }else{
         return redirect()->route('landing.page');
@@ -67,6 +70,8 @@ if(auth()->user()->role == 'admin' or 'customer'){
 
 public function logout(){
         Auth::logout();
+
+        Alert()->success('Success','Logout');
 
         return redirect()->route('landing.page');
 
