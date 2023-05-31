@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->dateTime('from_date');
             $table->dateTime('to_date');
+            $table->string('seat_count');
             $table->timestamps();
         });
     }

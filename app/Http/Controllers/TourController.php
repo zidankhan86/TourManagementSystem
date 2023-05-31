@@ -54,6 +54,7 @@ class TourController extends Controller
             "description"=>$request->description,
             "duration"=>$request->duration,
             "image"=>$imageName,
+            "seat_count"=>$request->seat_count,
             "from_date"=>$request->from_date,
             "to_date"=>$request->to_date
 
