@@ -48,6 +48,7 @@ class SslCommerzPaymentController extends Controller
         $post_data['cus_country'] = "Bangladesh";
         $post_data['cus_phone'] = $request->phone;
         $post_data['cus_fax'] = "";
+        $post_data['tour_id'] = $request->tour_id;
 
         # SHIPMENT INFORMATION
         $post_data['ship_name'] = "Store Test";
@@ -80,6 +81,7 @@ class SslCommerzPaymentController extends Controller
                 'amount' => $post_data['total_amount'],
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
+                'tour_id' => $post_data['tour_id'],   //Tour id
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency']
             ]);

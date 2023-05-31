@@ -26,6 +26,7 @@ class TourController extends Controller
             "price"=>'required',
             "description"=>'required',
             "location"=>'required',
+            "seat_count"=>'required',
             'from_date' => 'required|date_format:Y-m-d H:i:s',
             'to_date' => 'required|date_format:Y-m-d H:i:s|after_or_equal:from_date',
         ]);

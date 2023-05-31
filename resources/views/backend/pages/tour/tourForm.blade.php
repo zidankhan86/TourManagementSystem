@@ -22,7 +22,6 @@
       <div class="form-group">
         <label for="exampleInputPrice">Enter Sit</label>
         <input type="number" name="seat_count" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
-
       </div>
 
       <div class="form-group">

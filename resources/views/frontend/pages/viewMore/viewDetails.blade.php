@@ -56,6 +56,7 @@ body{
                     <h2 class="mt-5">
                     Tour Cost - {{ $toursData->price }} Tk /Person
                     </h2>
+                    <p style="color: black font-weight: bold;"> {{ $toursData->seat_count }} <span>Seat Left</span></p>
 
                     <a href="{{ route('tour.book.now',$toursData->id) }}" class="btn btn-primary btn-rounded">Book Now</a>
                     <h3 class="box-title mt-5">Key Highlights</h3>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('tour_id');
             $table->string('phone');
             $table->string('email');
             $table->string('address');

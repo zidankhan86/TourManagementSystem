@@ -28,13 +28,13 @@ public function viewDetails($id){
 
 public function bookNow($id){
 
-    $tours  = Tour::find($id);
-
+    // $tours  = Tour::find($id);
+    $tours = Tour::findOrFail($id);
 
     return view('frontend.pages.bookNow.bookNow',compact('tours'));
 }
 
-public function bookNowStore(Request $request){
+public function bookNowStore(Request $request ,$id){
 
     $request->validate([
 
@@ -43,11 +43,20 @@ public function bookNowStore(Request $request){
 
     ]);
 
-    //dd($request->all());
+    dd($request->all());
+
+    // $tourId = $request->input('tour_id'); // Assuming you have a hidden input field with the tour ID in your form
+    // $tour = Tour::findOrFail($id);
+
+    // if ($tour->seat_count > 0) {
+    //     $tour->seat_count--;
+    //     $tour->save();
+    // }
 
     Book::create([
 
         "name"=>$request->name,
+        "tour_id"=>$request->tour_id,
         "phone"=>$request->phone,
         "email"=>$request->email,
         "address"=>$request->address,

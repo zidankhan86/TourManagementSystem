@@ -27,6 +27,7 @@
                         <div class="place-cap-top">
                             <h3><a href="#">{{ $tour->tittle }}</a></h3>
                             <p class="dolor">{{ $tour->price }}<span>/ Per Person</span></p>
+                            <p class="dolor"> {{ $tour->seat_count }} <span>Seat Left</span></p>
                         </div>
                         <div class="place-cap-bottom">
                             <ul>

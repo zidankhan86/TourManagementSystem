@@ -70,6 +70,10 @@
                     <input type="hidden" name="currency" value="{{ $tours->currency }}">
                 </div>
 
+                <div>
+                    <input type="hidden" name="tour_id" value="{{ $tours->id }}">
+                </div>
+
                 <div class="row mt-3 mx-4">
                     <div class="col-12">
                         <div class="form-check">
