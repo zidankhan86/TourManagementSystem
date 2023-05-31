@@ -6,6 +6,7 @@ use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\Tour;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -33,6 +34,11 @@ class SslCommerzPaymentController extends Controller
     if ($tour->seat_count > 0) {
         $tour->seat_count--;
         $tour->save();
+    }else {
+        // If seat_count is 0, return an error response or perform any necessary actions
+        Alert::error('error', 'No seats available for booking.');
+        return redirect()->back();
+
     }
 
 
@@ -215,6 +221,8 @@ class SslCommerzPaymentController extends Controller
             #That means something wrong happened. You can redirect customer to your product page.
             echo "Invalid Transaction";
         }
+        Alert::success('Success', 'Thank You For Booking');
+        return to_route('landing.page');
 
 
     }
