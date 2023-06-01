@@ -50,6 +50,7 @@
                                         @auth
                                        @if (auth()->user()->role=='customer')
                                        <li><a href="{{route ('logout') }}" style="color: brown">Logout</a></li>
+                                       <li><a href="{{route ('customer.profile') }}" style="color: brown">{{ auth()->user()->name }}</a></li>
                                        @endif
 
                                        @else

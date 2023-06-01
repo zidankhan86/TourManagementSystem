@@ -47,8 +47,6 @@ class TourController extends Controller
            $request->file('image')->storeAs('/uploads',$imageName);
         }
 
-
-
         //dd('$request->all()');
         Tour::create([
             "tittle"=>$request->tittle,
@@ -128,6 +126,10 @@ public function bookingList(){
 }
 public function myProfile(){
     return view('backend.pages.profile.profile');
+}
+
+public function CustomerProfile(){
+    return view('backend.pages.profile.profileCustomer');
 }
 
 

@@ -36,8 +36,6 @@ Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax'])
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
-Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
 
@@ -49,6 +47,7 @@ Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport
 Route::get('/tour/support/view/details/{id}',[FrontendTourController::class,'supportDetails'])->name('more.support.view.details');
 Route::get('/tour/view/details/{id}',[FrontendTourController::class,'viewDetails'])->name('tour.view.details');
 Route::get('/home/about',[FrontendHomeController::class,'aboutUs'])->name('about.us');
+Route::get('/customer/profile',[TourController::class,'CustomerProfile'])->name('customer.profile');
 
 //Notify
 Route::get('/notification',[NotificationController::class,'notification'])->name('get.notification');
