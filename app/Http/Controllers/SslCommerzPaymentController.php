@@ -29,7 +29,7 @@ class SslCommerzPaymentController extends Controller
 
         // dd($id);
 
-        $id = $request->input('tour_id'); // Assuming you have a hidden input field with the tour ID in your form
+        $id = $request->input('tour_id');  // Assuming you have a hidden input field with the tour ID in your form
         $tour = Tour::findOrFail($id);
 
     if ($tour->seat_count > 0) {
@@ -44,7 +44,7 @@ class SslCommerzPaymentController extends Controller
 
 
         # Here you have to receive all the order data to initate the payment.
-        # Let's say, your oder transaction informations are saving in a table called "orders"
+        # Let's say, your oder transaction information are saving in a table called "orders"
         # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
 
         $post_data = array();
