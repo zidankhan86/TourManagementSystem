@@ -23,6 +23,11 @@
                             <input type="text" name="name" id="form1" class="form-control order-form-input" />
 
                         </div>
+                        @error('name')
+
+                        <p class="text-danger">{{ $message }}</p>
+
+                        @enderror
                     </div>
 
                 </div>
@@ -35,6 +40,10 @@
                         <div class="form-outline">
                             <input type="tel" name="phone" id="form3" class="form-control order-form-input" />
                         </div>
+                        @error('phone')
+                        <p class="text-danger">{{ $message }}</p>
+
+                        @enderror
                     </div>
                 </div>
 
@@ -46,6 +55,11 @@
                         <div class="form-outline">
                             <input type="email" name="email" id="form4" class="form-control order-form-input" />
                         </div>
+                        @error('email')
+
+                        <p class="text-danger">{{ $message }}</p>
+
+                        @enderror
                     </div>
                     <div>
                         <input type="hidden" name="price">
@@ -53,13 +67,18 @@
                 </div>
                 <div class="row mt-3 mx-4">
                     <div class="col-12">
-                        <label class="order-form-label">Adress</label>
+                        <label class="order-form-label">Address</label>
                     </div>
                     <div class="col-12">
                         <div class="form-outline">
                             <input type="text" name="address" id="form5" class="form-control order-form-input" />
-                            <label class="form-label" for="form5">Street Address</label>
+
                         </div>
+                        @error('address')
+
+                        <p class="text-danger">{{ $message }}</p>
+
+                        @enderror
                     </div>
                 </div>
                 <div>

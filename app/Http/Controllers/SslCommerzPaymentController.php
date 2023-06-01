@@ -24,6 +24,14 @@ class SslCommerzPaymentController extends Controller
 
     public function index(Request $request ,$id)
     {
+
+        $request->validate([
+            "name"=>'required',
+            "email"=>'required',
+            "address"=>'required',
+            "phone"=>'required',
+
+        ]);
         //dd($request->all());
         $tours = Tour::find($id);
 
