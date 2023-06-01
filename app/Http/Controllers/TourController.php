@@ -27,9 +27,8 @@ class TourController extends Controller
             "description"=>'required',
             "location"=>'required',
             "seat_count"=>'required|integer|min:1|max:50',
-
-            //  'from_date' => 'required|date|after:tomorrow',
-            //   'to_date' => 'required|date|after:start_date',
+             'from_date' => 'required|date',
+             'to_date' => 'required|date|after:from_date',
         ]);
 
         if ($validator->fails()) {
