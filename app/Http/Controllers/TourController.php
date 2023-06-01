@@ -26,13 +26,16 @@ class TourController extends Controller
             "price"=>'required',
             "description"=>'required',
             "location"=>'required',
-            "seat_count"=>'required',
-            'from_date' => 'required|date_format:Y-m-d H:i:s',
-            'to_date' => 'required|date_format:Y-m-d H:i:s|after_or_equal:from_date',
+            "seat_count"=>'required|integer|min:1|max:50',
+
+            //  'from_date' => 'required|date|after:tomorrow',
+            //   'to_date' => 'required|date|after:start_date',
         ]);
 
         if ($validator->fails()) {
-            Alert::error('Error ', 'Invalid Date');
+
+            Alert::error('Error ', 'Something went wrong!');
+            return back();
         } else {
             Alert::success('Success ', 'Valid Date');
         }
@@ -47,7 +50,7 @@ class TourController extends Controller
 
 
 
-        // dd($request->all());
+        //dd('$request->all()');
         Tour::create([
             "tittle"=>$request->tittle,
             "location"=>$request->location,
