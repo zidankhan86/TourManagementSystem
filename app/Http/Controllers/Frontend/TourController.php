@@ -40,12 +40,14 @@ public function bookNowStore(Request $request ,$id){
 
         'name'=>'required',
         'phone'=>'required',
+        'email'=>'required',
+
 
     ]);
 
     //dd($request->all());
 
-    $id = $request->input('tour_id'); // Assuming you have a hidden input field with the tour ID in your form
+    //$id = $request->input('tour_id'); // Assuming you have a hidden input field with the tour ID in your form
     $tour = Tour::findOrFail($id);
 
     if ($tour->seat_count > 0) {
