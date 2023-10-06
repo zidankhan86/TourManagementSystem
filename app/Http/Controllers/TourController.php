@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Rating;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -130,6 +131,24 @@ public function myProfile(){
 
 public function CustomerProfile(){
     return view('backend.pages.profile.profileCustomer');
+}
+
+public function storeRating(Request $request, $id)
+{
+    //dd($request->all());
+    $request->validate([
+        'rating'=>'required'
+    ]);
+    $tour = Tour::find($id);
+
+    $rating = new Rating();
+    $rating->tour_id = $tour->id;
+    $rating->rating = $request->input('rating');
+    $rating->save();
+
+
+    Alert::success('Thank you for your feedback.');
+    return back();
 }
 
 

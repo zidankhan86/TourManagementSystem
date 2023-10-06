@@ -2,7 +2,7 @@
     /*author:starttemplate*/
 /*reference site : starttemplate.com*/
 body {
-  background-image:url('https://i.redd.it/o8dlfk93azs31.jpg');
+  background-image:url('https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_1280.jpg');
   background-position:center;
   background-size:cover;
 
@@ -83,7 +83,7 @@ h4 {
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> --}}
     <!-- Font Awesome-->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -97,7 +97,8 @@ h4 {
         <div class="col-md-offset-5 col-md-4 text-center">
             <h1 class='text-white'>Tour Management System</h1>
               <div class="form-login"></br>
-                <h4>Secure Login</h4>
+                <a class="btn btn-success" href="{{ url('/') }}">Go Home</a>
+                <h4>Secure Login </h4>
                 </br>
                 <input type="email" id="userEmail" name="email" class="form-control input-sm chat-input" placeholder="Email"/>
                 </br></br>

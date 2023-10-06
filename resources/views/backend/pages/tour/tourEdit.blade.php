@@ -1,5 +1,15 @@
 @extends('backend.master')
 @section('main')
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4 style="text-align: center">Edit Form</h4>
+        <div class="card">
+            <div class="card-title">
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+
 <form action="{{ route('tour.update',$tour->id) }}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -46,5 +56,10 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
+</div>
+</div>
+</div>
 
+</div>
 @endsection

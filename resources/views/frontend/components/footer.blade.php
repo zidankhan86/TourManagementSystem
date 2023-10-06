@@ -6,11 +6,10 @@
                  <div class="single-footer-caption mb-30">
                       <!-- logo -->
                      <div class="footer-logo">
-                        <p>MyTrip</p>
+                        <p>Tour Management System</p>
                      </div>
                      <div class="footer-tittle">
                          <div class="footer-pera">
-                             <p>Lorem iaspsum doldfor sit amvset, consectetur adipisicing cvelit csed do eiusmod tempor incididucvccnt ut labovre.</p>
                         </div>
                      </div>
                  </div>
@@ -34,10 +33,10 @@
                     <div class="footer-tittle">
                         <h4>New Products</h4>
                         <ul>
-                            <li><a href="#">Woman Cloth</a></li>
-                            <li><a href="#">Fashion Accessories</a></li>
-                            <li><a href="#"> Man Accessories</a></li>
-                            <li><a href="#"> Rubber made Toys</a></li>
+                            <li><a href="#">Air Ticket</a></li>
+                            <li><a href="#">Tour Package</a></li>
+                            <li><a href="#">Hotel Booking</a></li>
+                            <li><a href="#">Support Tour</a></li>
                         </ul>
                     </div>
                 </div>
@@ -62,7 +61,7 @@
          <div class="col-xl-7 col-lg-7 col-md-7">
             <div class="footer-copy-right">
                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | IUBAT </a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
          </div>

@@ -1,5 +1,13 @@
 @extends('backend.master')
 @section('main')
+<div class="row">
+    <div class="col-lg-12">
+        <h4 style="text-align: center">Edit Form</h4>
+        <div class="card">
+            <div class="card-title">
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
 <form action="{{route('tour.support.update',$supportEdit->id)}}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -35,9 +43,9 @@
         <input type="file" value="{{ $supportEdit->image }}" name="image" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
       </div>
 
-      <div class="form-control" >
+      <div class="form-group" >
         <label for="exampleInputName3">Enter Status</label>
-       <select value="{{ $supportEdit->status }}" name="status" id="">
+       <select value="{{ $supportEdit->status }}" name="status" id="" class="form-control">
         <option value="Active">Active</option>
         <option value="Inactive">Inactive</option>
        </select>
@@ -46,5 +54,11 @@
 
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 
 @endsection

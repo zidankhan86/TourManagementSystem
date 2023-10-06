@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('amount');
             $table->string('currency');
             $table->string('status');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

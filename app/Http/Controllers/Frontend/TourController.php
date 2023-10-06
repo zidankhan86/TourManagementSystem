@@ -7,6 +7,7 @@ use App\Models\Tour;
 use App\Models\TourSupport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Hotel;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class TourController extends Controller
@@ -74,6 +75,11 @@ public function bookNowStore(Request $request ,$id){
 public function supportDetails($id){
     $toursData = TourSupport::find($id);
     return view('frontend.pages.viewMore.supportViewDetails',compact('toursData'));
+}
+
+public function hotelNow($id){
+    $hotels = Hotel::find($id);
+    return view('frontend.pages.hotelBook',compact('hotels'));
 }
 
 }

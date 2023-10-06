@@ -31,7 +31,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                              <h4  style="color:rgb(5, 56, 71)">MyTrip.com</h4>
+                              <h4  style="color:rgb(5, 56, 71)">TMS</h4>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
@@ -40,12 +40,11 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{{route('landing.page') }}">Home</a></li>
-                                        <li><a href="{{route ('about.us') }}">About US</a></li>
+                                        <li><a href="{{ url('/flight') }}">Flight</a></li>
+                                        <li><a href="{{ url('/hotel') }}">Hotel</a></li>
                                         <li><a href="{{route ('tour.package.page') }}">Tour</a></li>
-                                        <li><a href="{{route ('tour.support.package') }}">Tour Support</a>
+                                        <li><a href="{{url ('/about') }}">About</a>
                                         </li>
-
-                                        <li><a href="contact.html">Contact Us</a></li>
 
                                         @auth
                                        @if (auth()->user()->role=='customer')

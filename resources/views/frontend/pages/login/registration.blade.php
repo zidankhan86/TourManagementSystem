@@ -10,13 +10,7 @@
 	margin-left:30%;
 }
 .login {
-	font-family: 'Josefin Sans', sans-serif;
-	-webkit-transition: .3s;
-	-moz-transition: .3s;
-	transition: .3s;
-	-webkit-transform: rotateY(40deg);
-	-moz-transform: rotateY(40deg);
-	transform: rotateY(40deg);
+
 }
 .login:hover {
 	-webkit-transform: rotate(0);
@@ -85,6 +79,7 @@
 <div class="col-md-4 col-md-offset-4" id="login">
 						<section id="inner-wrapper" class="login">
 							<article>
+                                <p>Register <a href="{{ url('/') }}" class="btn btn-success">Go Home</a></p>
 								<form action="{{route('registration.website.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
 									<div class="form-group">
