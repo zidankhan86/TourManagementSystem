@@ -36,9 +36,6 @@ class TourSupportController extends Controller
         }
 
         TourSupport::create([
-
-
-
             "tittle"=>$request->tittle,
             "v_name"=>$request->v_name,
             "description"=>$request->description,

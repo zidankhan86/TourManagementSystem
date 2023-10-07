@@ -11,7 +11,7 @@
         </div>
         <div class="row">
 
-            @foreach ($tours as $tour)
+            @foreach ($tourSupport as $tour)
 
 
             <div class="col-xl-3 col-lg-4 col-md-4">
