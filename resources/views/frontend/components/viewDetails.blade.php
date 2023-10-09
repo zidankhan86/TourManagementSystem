@@ -37,26 +37,53 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title"> {{ $toursData->tittle }}</h3>
+                <h3 class="card-title"></h3>
                 <h6 class="card-subtitle"></h6>
                 <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-6">
-                        <div class="white-box text-center"><img height="300px" width="350px" src="{{ url('/uploads/uploads/'.$toursData->image) }}" class="img-responsive"></div>
+                    <div class="col-lg-5 col-md-5 col-sm-12"> <br><br>
+                        <div class="white-box "><img height="300px" width="450px" src="{{ url('/uploads/uploads/'.$toursData->image) }}" class="img-responsive">
+
+                            <div id="sectionId" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                                <!-- Details -->
+                                <div style="flex: 1; padding: 10px; cursor: pointer; transition: background-color 0.3s ease;" id="detailsOption">
+                                    <p style="color: black">Details</p>
+                                    <p>{{ $toursData->description }}</p>
+                                </div>
+
+                                {{-- <!-- Options -->
+                                <div style="flex: 1;  padding: 10px; cursor: pointer; transition: background-color 0.3s ease;" id="optionsOption">
+                                    <h4>Options</h4>
+                                    <p>Options content goes here.</p>
+                                </div>
+
+                                <!-- Policy -->
+                                <div style="flex: 1;  padding: 10px; cursor: pointer; transition: background-color 0.3s ease;" id="policyOption">
+                                    <h4>Policy</h4>
+                                    <p>Policy content goes here.</p>
+                                </div> --}}
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-6">
-                        <h4 class="box-title mt-5">Product description</h4>
-                        <p>{{ $toursData->description }}</p>
+                    <div class="col-lg-7 col-md-7 col-lg-6">
+                        <h4 class="box-title mt-5">{{ $toursData->tittle }}</h4>
+
                         <h2 class="mt-5">
                         Tour Cost - {{ $toursData->price }} Tk /Person
                         </h2>
                         <p style="color: black font-weight: bold;"> {{ $toursData->seat_count }} <span>Seat Left</span></p>
 
-                        <a href="{{ route('tour.book.now',$toursData->id) }}" class="btn btn-primary btn-rounded">Book Now</a>
-                        <h3 class="box-title mt-5">Key Highlights</h3>
+
+                        <h3 class="box-title mt-5">Journey Date</h3>
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-success"></i>Whether you're a thrill-seeker</li>
-                            <li><i class="fa fa-check text-success"></i>leaving you with cherished memories</li>
-                            <li><i class="fa fa-check text-success"></i>Travel opens up a world of possibilities</li>
+                            <li><i class="fa fa-check text-success"></i> Journey Date <br>
+
+                                <input type="text" class="form-control-sm" id="disabledInput" value="{{ $toursData->from_date }}"   disabled>
+                            </li>
+                            <li><i class="fa fa-check text-success"></i>Travelers <br>
+                                <input type="text" class="form-control-sm" id="disabledInput" value="{{ $toursData->to_date }}"   disabled></li>
+                            <li><i class="fa fa-check text-success"></i>Starting from <br> <strong>BDT {{ $toursData->price }}</strong> </li><br>
+                            <a href="{{ route('tour.book.now',$toursData->id) }}" class="btn btn-primary btn-rounded">Continue</a>
                         </ul>
                         <h3 class="box-title mt-5">Rate Our Service</h3>
                         <form action="{{ route('tour.rate',$toursData->id) }}" method="POST">
@@ -68,7 +95,7 @@
                                         <label for="rating{{ $i }}" class="fa fa-star"></label>
                                     @endfor
                                 </div>
-                                <button type="submit" class="btn btn-info">Rate This Product</button>
+                                <button type="submit" class="btn btn-info">Rate This Tour</button>
                             </div>
                         </form>
                     </div>
@@ -108,3 +135,13 @@
 
     /* End of Star Rating */
     </style>
+
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+</script>
