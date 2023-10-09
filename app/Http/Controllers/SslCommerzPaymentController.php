@@ -160,7 +160,7 @@ class SslCommerzPaymentController extends Controller
             echo "Invalid Transaction";
         }
         Alert::success('Success', 'Thank You For Booking');
-        return to_route('landing.page');
+        return to_route('/');
 
 
     }
