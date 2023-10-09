@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('tour_id');
+            $table->foreignId('user_id');
             $table->string('phone');
             $table->string('email');
             $table->string('address');

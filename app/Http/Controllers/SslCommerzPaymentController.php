@@ -72,6 +72,7 @@ class SslCommerzPaymentController extends Controller
         $post_data['cus_phone'] = $request->phone;
         $post_data['cus_fax'] = "";
         $post_data['tour_id'] = $request->tour_id;
+        $post_data['user_id'] = auth()->user()->id;
 
         # SHIPMENT INFORMATION
         $post_data['ship_name'] = "Store Test";
@@ -105,6 +106,7 @@ class SslCommerzPaymentController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'tour_id' => $post_data['tour_id'],   //Tour id
+                'user_id' => $post_data['user_id'], 
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency']
             ]);

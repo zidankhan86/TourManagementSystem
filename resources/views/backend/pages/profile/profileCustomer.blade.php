@@ -155,7 +155,26 @@ mark {
                             </div>
                         </div>
 
-                    </div>
+                    </div><br><br>
+
+                     <!-- Order History -->
+        <h3>Order History</h3>
+
+@foreach ($bookTour as $item)
+
+
+        <ul style="list-style: none; padding: 0; text-align: left;">
+            <li>
+                
+                <strong>Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
+                <span>Placed on: {{ $item->created_at }}</span><br>
+                <strong>Transaction No</strong> - {{ $item->transaction_id }}<br>
+            </li>
+            <p>Order Status -<small>Processing</small></p>
+            <button style="color: black">Cancel Order</button>
+            <!-- Add more order history entries here -->
+        </ul> <hr>
+        @endforeach
                 </div>
             </div>
             <div class="col-lg-6">

@@ -28,8 +28,8 @@ class TourController extends Controller
             "description"=>'required',
             "location"=>'required',
             "seat_count"=>'required|integer|min:1|max:50',
-             'from_date' => 'required|date',
-             'to_date' => 'required|date|after:from_date',
+             'from_date' => 'required',
+             'to_date' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -130,7 +130,9 @@ public function myProfile(){
 }
 
 public function CustomerProfile(){
-    return view('backend.pages.profile.profileCustomer');
+    $bookTour = Book::with('BookRelation','UserRelation')->where('user_id',auth()->user()->id)->get();
+
+    return view('backend.pages.profile.profileCustomer' ,compact('bookTour'));
 }
 
 public function storeRating(Request $request, $id)

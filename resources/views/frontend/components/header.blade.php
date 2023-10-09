@@ -55,7 +55,7 @@
                                        @if (auth()->user()->role=='customer')
                                        <li><a href="{{route ('logout') }}" style="color: brown">Logout</a></li>
 
-                                       <li><a href="blog.html">{{ auth()->user()->name }}</a>
+                                       <li><p>{{ auth()->user()->name }}</p>
                                         <ul class="submenu">
                                             <li><a href="{{route ('customer.profile') }}">My Profile</a></li>
 
