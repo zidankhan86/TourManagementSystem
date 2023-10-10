@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Models\Book;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -106,7 +107,7 @@ class SslCommerzPaymentController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'tour_id' => $post_data['tour_id'],   //Tour id
-                'user_id' => $post_data['user_id'], 
+                'user_id' => $post_data['user_id'],
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency']
             ]);
@@ -186,6 +187,8 @@ class SslCommerzPaymentController extends Controller
             echo "Transaction is Invalid";
         }
 
+
+
     }
 
     public function cancel(Request $request)
@@ -251,6 +254,18 @@ class SslCommerzPaymentController extends Controller
         } else {
             echo "Invalid Data";
         }
+    }
+
+    public function cancelStatus($id) {
+        try {
+            $book = Book::findOrFail($id);
+            $book->update(['status' => 'Canceled']);
+            Alert::info('Info', 'Canceled.');
+        } catch (\Exception $e) {
+            Alert::error('Error', 'Failed to update status: ' . $e->getMessage());
+        }
+
+        return redirect()->back();
     }
 
 }

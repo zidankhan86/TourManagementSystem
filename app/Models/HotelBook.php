@@ -13,4 +13,8 @@ class HotelBook extends Model
     public function HotelBook(){
         return $this->belongsTo(Hotel::class,'hotel_id','id');
     }
+    
+    public function UserRelation(){
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

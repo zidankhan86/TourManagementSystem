@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\Hotel;
+use App\Models\HotelBook;
 
 class SslController extends Controller
 {
@@ -73,6 +74,7 @@ class SslController extends Controller
         $post_data['cus_phone'] = $request->phone;
         $post_data['cus_fax'] = "";
         $post_data['hotel_id'] = $request->hotel_id;
+        $post_data['user_id'] = auth()->user()->id;
 
         # SHIPMENT INFORMATION
         $post_data['ship_name'] = "Store Test";
@@ -107,6 +109,7 @@ class SslController extends Controller
                 'address' => $post_data['cus_add1'],
                 'hotel_id' => $post_data['hotel_id'],   //hotel id
                 'transaction_id' => $post_data['tran_id'],
+                'user_id' => $post_data['user_id'],
                 'currency' => $post_data['currency']
             ]);
 
@@ -214,6 +217,17 @@ class SslController extends Controller
         }
 
 
+    }
+    public function cancelHotel($id) {
+        try {
+            $book = HotelBook::findOrFail($id);
+            $book->update(['status' => 'Canceled']);
+            Alert::info('Info', 'Canceled.');
+        } catch (\Exception $e) {
+            Alert::error('Error', 'Failed to update status: ' . $e->getMessage());
+        }
+
+        return redirect()->back();
     }
 
 

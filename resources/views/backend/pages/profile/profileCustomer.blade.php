@@ -158,23 +158,65 @@ mark {
                     </div><br><br>
 
                      <!-- Order History -->
-        <h3>Order History</h3>
+        <h3>Booking History</h3>
 
-@foreach ($bookTour as $item)
+        @foreach ($bookTour as $item)
 
 
         <ul style="list-style: none; padding: 0; text-align: left;">
             <li>
-                
+                <strong>Booking Name -</strong> - {{ $item->BookRelation->tittle }}<br>
                 <strong>Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
                 <span>Placed on: {{ $item->created_at }}</span><br>
                 <strong>Transaction No</strong> - {{ $item->transaction_id }}<br>
             </li>
-            <p>Order Status -<small>Processing</small></p>
-            <button style="color: black">Cancel Order</button>
-            <!-- Add more order history entries here -->
+            <p>Order Status -<small>{{ $item->status }}</small></p>
+            @if($item->status == 'Pending')
+            <a href="{{ route('cancel.tour', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Order</a>
+        @elseif($item->status == 'Canceled')
+            <button class="genric-btn danger circle">Order Canceled</button>
+        @endif
         </ul> <hr>
         @endforeach
+
+
+
+        @foreach ($bookHotel as $item)
+        <ul style="list-style: none; padding: 0; text-align: left;">
+            <li>
+                <strong>Booking Name -</strong> - {{ $item->HotelBook->room_title }}<br>
+                <strong>Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
+                <span>Placed on: {{ $item->created_at }}</span><br>
+                <strong>Transaction No</strong> - {{ $item->transaction_id }}<br>
+            </li>
+            <p>Order Status -<small>{{ $item->status }}</small></p>
+            @if($item->status == 'Pending')
+            <a href="{{ route('cancel.hotel', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Order</a>
+        @elseif($item->status == 'Canceled')
+            <button class="genric-btn danger circle">Order Canceled</button>
+        @endif
+        </ul> <hr>
+        @endforeach
+
+
+        @foreach ($bookFlight as $item)
+        <ul style="list-style: none; padding: 0; text-align: left;">
+            <li>
+                <strong>Booking Name -</strong> - {{ $item->FlightBook->name }}<br>
+                <strong>Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
+                <span>Placed on: {{ $item->created_at }}</span><br>
+                <strong>Transaction No</strong> - {{ $item->transaction_id }}<br>
+            </li>
+            <p>Order Status -<small>{{ $item->status }}</small></p>
+            @if($item->status == 'Pending')
+            <a href="{{ route('cancel.flight', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Order</a>
+        @elseif($item->status == 'Canceled')
+            <button class="genric-btn danger circle">Order Canceled</button>
+        @endif
+        </ul> <hr>
+        @endforeach
+
+
                 </div>
             </div>
             <div class="col-lg-6">

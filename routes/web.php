@@ -50,6 +50,10 @@ Route::post('/hotel/rate/{id}', [HotelController::class,'storeRatingHotel'])->na
 Route::post('/flight/rate/{id}', [FlightController::class,'storeRatingFlight'])->name('flight.rate');
 Route::get('/contact', [ContactController::class,'contact']);
 Route::post('/contactStore', [ContactController::class,'contactStore']);
+Route::get('/cancel/{id}',[SslCommerzPaymentController::class,'cancelStatus'])->name('cancel.tour');
+Route::get('/cancel/hotel/{id}',[SslController::class,'cancelHotel'])->name('cancel.hotel');
+Route::get('/cancel/flight/{id}',[SslFlightController::class,'cancelFlight'])->name('cancel.flight');
+
 //Notify
 Route::get('/notification',[NotificationController::class,'notification'])->name('get.notification');
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\FlightBook;
+use App\Models\HotelBook;
 use App\Models\Rating;
 use App\Models\Tour;
 use Illuminate\Http\Request;
@@ -21,13 +23,13 @@ class TourController extends Controller
     }
     public function tourStore(Request $request){
 
-
+    //dd($request->all());
         $validator = Validator::make($request->all(), [
             "tittle"=>'required',
             "price"=>'required',
             "description"=>'required',
             "location"=>'required',
-            "seat_count"=>'required|integer|min:1|max:50',
+            "seat_count"=>'required|integer|min:1',
              'from_date' => 'required',
              'to_date' => 'required',
         ]);
@@ -59,8 +61,6 @@ class TourController extends Controller
             "seat_count"=>$request->seat_count,
             "from_date"=>$request->from_date,
             "to_date"=>$request->to_date
-
-
         ]);
 
         Alert::success('Success ', 'Tour Added');
@@ -129,10 +129,17 @@ public function myProfile(){
     return view('backend.pages.profile.profile');
 }
 
-public function CustomerProfile(){
-    $bookTour = Book::with('BookRelation','UserRelation')->where('user_id',auth()->user()->id)->get();
 
-    return view('backend.pages.profile.profileCustomer' ,compact('bookTour'));
+//Customer Profile
+public function CustomerProfile(){
+    //tour
+    $bookTour = Book::with('BookRelation','UserRelation')->where('user_id',auth()->user()->id)->get();
+    //hotel
+    $bookHotel = HotelBook::with('HotelBook','UserRelation')->where('user_id',auth()->user()->id)->get();
+    //Flight
+    $bookFlight = FlightBook::with('FlightBook','UserRelation')->where('user_id',auth()->user()->id)->get();
+
+    return view('backend.pages.profile.profileCustomer' ,compact('bookTour','bookHotel','bookFlight'));
 }
 
 public function storeRating(Request $request, $id)

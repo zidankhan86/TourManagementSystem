@@ -41,7 +41,7 @@
                 <h6 class="card-subtitle"></h6>
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-12"> <br><br>
-                        <div class="white-box "><img height="300px" width="450px" src="{{ url('/uploads/uploads/'.$toursData->image) }}" class="img-responsive">
+                        <div class="white-box "><img height="300px" width="350px" src="{{ url('/uploads/uploads/'.$toursData->image) }}" class="img-responsive">
 
                             <div id="sectionId" style="display: flex; justify-content: space-between; margin-top: 20px;">
                                 <!-- Details -->
@@ -79,9 +79,9 @@
                             <li><i class="fa fa-check text-success"></i> Journey Date <br>
 
                                 <input type="text" class="form-control-sm" id="disabledInput" value="{{ $toursData->from_date }}"   disabled>
-                            </li>
-                            <li><i class="fa fa-check text-success"></i>Travelers <br>
-                                <input type="text" class="form-control-sm" id="disabledInput" value="{{ $toursData->to_date }}"   disabled></li>
+                            </li><br>
+                            <li><i class="fa fa-check text-success"></i>End Date <br>
+                                <input type="text" class="form-control-sm" id="disabledInput" value="{{ $toursData->to_date }}"   disabled></li><br>
                             <li><i class="fa fa-check text-success"></i>Starting from <br> <strong>BDT {{ $toursData->price }}</strong> </li><br>
                             <a href="{{ route('tour.book.now',$toursData->id) }}" class="btn btn-primary btn-rounded">Continue</a>
                         </ul>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('currency');
             $table->string('status');
             $table->foreignId('flight_id');
+            $table->foreignId('user_id');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

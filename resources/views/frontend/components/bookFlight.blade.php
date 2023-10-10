@@ -90,6 +90,10 @@
                     <input type="hidden" name="flight_id" value="{{ $book->id }}">
                 </div>
 
+                <div>
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                </div>
+
                 <div class="row mt-3 mx-4">
                     <div class="col-12">
                         <div class="form-check">

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\Flight;
+use App\Models\FlightBook;
 use App\Models\Hotel;
 
 class SslFlightController extends Controller
@@ -73,6 +74,7 @@ class SslFlightController extends Controller
         $post_data['cus_phone'] = $request->phone;
         $post_data['cus_fax'] = "";
         $post_data['flight_id'] = $request->flight_id;
+        $post_data['user_id'] = auth()->user()->id;
 
         # SHIPMENT INFORMATION
         $post_data['ship_name'] = "Store Test";
@@ -106,6 +108,7 @@ class SslFlightController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'flight_id' => $post_data['flight_id'],   //Flight id
+                'user_id' => $post_data['user_id'],
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency']
             ]);
@@ -214,6 +217,17 @@ class SslFlightController extends Controller
         }
 
 
+    }
+    public function cancelFlight($id) {
+        try {
+            $book = FlightBook::findOrFail($id);
+            $book->update(['status' => 'Canceled']);
+            Alert::info('Info', 'Canceled.');
+        } catch (\Exception $e) {
+            Alert::error('Error', 'Failed to update status: ' . $e->getMessage());
+        }
+
+        return redirect()->back();
     }
 
 
