@@ -19,7 +19,7 @@
                 <div class="home-blog-single mb-30">
                     <div class="blog-img-cap">
                         <div class="blog-img">
-                            <img src="{{url ('/uploads/uploads',$tour->image) }}" alt="">
+                           <a href="{{route ('more.support.view.details',$tour->id) }}"> <img src="{{url ('/uploads/uploads',$tour->image) }}" alt=""></a>
 
                         </div>
                         <div class="place-cap-bottom">

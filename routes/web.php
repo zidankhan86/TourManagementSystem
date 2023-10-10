@@ -53,7 +53,8 @@ Route::post('/contactStore', [ContactController::class,'contactStore']);
 Route::get('/cancel/{id}',[SslCommerzPaymentController::class,'cancelStatus'])->name('cancel.tour');
 Route::get('/cancel/hotel/{id}',[SslController::class,'cancelHotel'])->name('cancel.hotel');
 Route::get('/cancel/flight/{id}',[SslFlightController::class,'cancelFlight'])->name('cancel.flight');
-
+Route::get('/moreSupport/{id}',[TourSupportController::class,'moreSupport'])->name('more.Support.form');
+Route::post('/moreSupportStore', [ContactController::class,'moreSupportStore'])->name('more.support.store');
 //Notify
 Route::get('/notification',[NotificationController::class,'notification'])->name('get.notification');
 

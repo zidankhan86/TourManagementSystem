@@ -18,4 +18,5 @@ class FlightBook extends Model
     public function UserRelation(){
         return $this->belongsTo(User::class,'user_id','id');
     }
+    
 }

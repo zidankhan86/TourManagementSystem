@@ -172,7 +172,7 @@ mark {
             </li>
             <p>Order Status -<small>{{ $item->status }}</small></p>
             @if($item->status == 'Pending')
-            <a href="{{ route('cancel.tour', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Order</a>
+            <a href="{{ route('cancel.tour', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Booking</a>
         @elseif($item->status == 'Canceled')
             <button class="genric-btn danger circle">Order Canceled</button>
         @endif
@@ -191,7 +191,7 @@ mark {
             </li>
             <p>Order Status -<small>{{ $item->status }}</small></p>
             @if($item->status == 'Pending')
-            <a href="{{ route('cancel.hotel', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Order</a>
+            <a href="{{ route('cancel.hotel', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Booking</a>
         @elseif($item->status == 'Canceled')
             <button class="genric-btn danger circle">Order Canceled</button>
         @endif
@@ -209,7 +209,7 @@ mark {
             </li>
             <p>Order Status -<small>{{ $item->status }}</small></p>
             @if($item->status == 'Pending')
-            <a href="{{ route('cancel.flight', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Order</a>
+            <a href="{{ route('cancel.flight', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Booking</a>
         @elseif($item->status == 'Canceled')
             <button class="genric-btn danger circle">Order Canceled</button>
         @endif

@@ -46,7 +46,6 @@ class TourSupportController extends Controller
 
         ]);
         Alert::success('Success','Tour Support Created');
-
         return back();
 
 
@@ -108,7 +107,11 @@ class TourSupportController extends Controller
     public function tourSupportView($id){
 
         $SupportView = TourSupport::find($id);
-        return view('backend.pages.moreService.supportview',compact('SupportView'));
+        return view('frontend.pages.tourSupport',compact('SupportView'));
+    }
+
+    public function moreSupport(){
+        return view('frontend.pages.moreSupportForm');
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\MoreSupportTour;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
@@ -38,6 +39,17 @@ public function contactStore(Request $request){
    ]);
    Alert::success('Thank you for contact us');
    return back();
+}
+public function moreSupportStore(Request $request){
+    MoreSupportTour::create([
+
+        "name"=>$request->name,
+        "phone"=>$request->phone,
+        "email"=>$request->email,
+        "address"=>$request->address,
+
+    ]);
+    return redirect()->route('landing.page');
 }
 
 }

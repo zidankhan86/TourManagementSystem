@@ -48,7 +48,7 @@ body{
             <h6 class="card-subtitle"></h6>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-6">
-                    <div class="white-box text-center"><img height="550px" width="350px" src="{{ url('/uploads/uploads/'.$toursData->image) }}" class="img-responsive"></div>
+                    <div class="white-box text-center"><img height="350px" width="350px" src="{{ url('/uploads/uploads/'.$toursData->image) }}" class="img-responsive"></div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-6">
                     <h4 class="box-title mt-5">Product description</h4>
@@ -57,7 +57,7 @@ body{
                     Tour Cost - {{ $toursData->price }} Tk /Person
                     </h2>
 
-                    <a href="{{ route('tour.book.now') }}" class="btn btn-primary btn-rounded">Book Now</a>
+                    <a href="{{ route('more.Support.form',$toursData->id) }}" class="btn btn-primary btn-rounded">Book Now</a>
                     <h3 class="box-title mt-5">Why Tour ?</h3>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-check text-success"></i>Traveling is the only thing you can buy that makes you richer</li>
