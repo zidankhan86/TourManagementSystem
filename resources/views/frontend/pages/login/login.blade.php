@@ -103,6 +103,11 @@ h4 {
                 <input type="email" id="userEmail" name="email" class="form-control input-sm chat-input" placeholder="Email"/>
                 </br></br>
                 <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password"/>
+
+                @if($errors->has('password'))
+                    <p class="text-danger">{{ $errors->first('password') }}</p>
+                @endif
+
                 </br></br>
                 <div class="wrapper">
                         <span class="group-btn">

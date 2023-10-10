@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         ]);
 
-Alert()->success('Success','Registration');
+        Alert::success('Success','Registration');
         return to_route('landing.page');
 
     }
@@ -45,26 +45,39 @@ Alert()->success('Success','Registration');
 
     public function loginProcess(Request $request){
 
-//dd($request->all());
-    $credential = $request->only(['email','password']);
+        $rules = [
+            'email' => 'required|email',
+            'password' => 'required',
+        ];
 
-    if(Auth::attempt($credential))
-    {
-if(auth()->user()->role == 'admin' or 'customer'){
-    if(auth()->user()->role == 'admin'){
+        // Define custom error messages (optional)
+        $customMessages = [
+            'email.required' => 'Email is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'password.required' => 'Password is required.',
+        ];
 
+        // Validate the request data
+        $request->validate($rules, $customMessages);
+        // dd($request->all());
+        $credential = $request->only(['email', 'password']);
 
-        Alert()->success('Success','Login');
-
-        return redirect()->route('home');
-    }else{
-        return redirect()->route('landing.page');
-
+        if (Auth::attempt($credential)) {
+            if (auth()->user()->role == 'admin' or auth()->user()->role == 'customer') {
+                if (auth()->user()->role == 'admin') {
+                    Alert()->success('Success', 'Login');
+                    return redirect()->route('home');
+                } else {
+                    return redirect()->route('landing.page');
+                }
+            }
+        } else {
+            Alert::error('Success','Registration');
+            // Password does not match, display an error message
+            return redirect()->route('login')->withErrors(['password' => 'Enter correct Password']);;
+        }
     }
-}
-    }
 
-}
 
 
 
