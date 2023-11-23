@@ -40,7 +40,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{{route('landing.page') }}">Home</a></li>
-                                        <li><a href="blog.html">Services</a>
+                                        <li><a href="#">Services</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ url('/flight') }}">Flight</a></li>
                                         <li><a href="{{ url('/hotel') }}">Hotel</a></li>

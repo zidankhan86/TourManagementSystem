@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="hero-cap text-center">
-                        <h2>Book Your Perfect Hotel</h2>
+                    <div class="hero-cap">
+                        <h2 style="color: black">Book Your Hotel</h2>
                     </div>
                 </div>
             </div>
