@@ -24,9 +24,15 @@
             </li>
 
 
+
         </li>
         <li><a href="{{ route('products.index') }}"><i class="fas fa-car"></i>Car</a>
         </li>
+
+    </li>
+    <li><a href="#"><i class="fas fa-book"></i>Car Booking</a>
+    </li>
+
 
                 <li><a class="sidebar-sub-toggle"><i class="ti-thumb-up"></i> Support Package <span
                     class="sidebar-collapse-icon ti-angle-down"></span></a>

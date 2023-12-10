@@ -37,8 +37,7 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 //Fronted
 Route::get('/product/page',[ProductController::class,'product'])->name('product.page');
-Route::get('/booking/{id}',[BooksController::class,'index'])->name('booking');
-Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('booking.store');
+
 
 Route::get('/',[FrontendHomeController::class,'landing'])->name('landing.page');
 Route::get('/tour/page',[FrontendTourController::class,'tours'])->name('tour.package.page');
@@ -79,6 +78,9 @@ Route::get('/categoryWise/{id}',[CategoryController::class,'CatWise'])->name('ca
 
  Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  //Booking Frontend
+ Route::get('/booking/{id}',[BooksController::class,'index'])->name('booking');
+Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('booking.store');
+
  Route::get('/tour/book/now/{id}',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
  Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
  Route::get('/hotel/book/now/{id}',[FrontendTourController::class,'hotelNow'])->name('hotel.book.now');
