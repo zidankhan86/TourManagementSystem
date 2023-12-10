@@ -4,18 +4,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SslController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BooksController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SslFlightController;
 use App\Http\Controllers\TourSupportController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\TourController as FrontendTourController;
+use App\Http\Controllers\ProductController;
 
 //SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
@@ -33,6 +36,10 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 
 //Fronted
+Route::get('/product/page',[ProductController::class,'product'])->name('product.page');
+Route::get('/booking/{id}',[BooksController::class,'index'])->name('booking');
+Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('booking.store');
+
 Route::get('/',[FrontendHomeController::class,'landing'])->name('landing.page');
 Route::get('/tour/page',[FrontendTourController::class,'tours'])->name('tour.package.page');
 Route::get('/tour/more/support/page',[FrontendTourController::class,'moreSupport'])->name('tour.support.package');
@@ -65,6 +72,8 @@ Route::get('/login/form',[AuthController::class,'loginForm'])->name('login');
 Route::post('/login/process',[AuthController::class,'loginProcess'])->name('login.process');
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
+Route::get('/product/details/{id}',[ProductController::class,'productDetails'])->name('product.details');
+Route::get('/categoryWise/{id}',[CategoryController::class,'CatWise'])->name('category.wise');
 
 //Backend
 
@@ -111,6 +120,13 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
  Route::post('/flightStore',[FlightController::class,'flightStore'])->name('flight.Store');
  Route::get('/delete/{id}',[FlightController::class,'flightDelete'])->name('flight.delete');
  Route::get('/flightList',[FlightController::class,'flightList'])->name('flight.list');
+//Car
+Route::get('/product', [ProductController::class,'index'])->name('products.index');
+Route::post('/product', [ProductController::class,'store'])->name('product');
+ //category
+    Route::get('/category-list',[CategoryController::class,'list'])->name('category.list');
+    Route::get('/category-form',[CategoryController::class,'form'])->name('category.form');
+    Route::post('/category-store',[CategoryController::class,'store'])->name('category.store');
  //Report
  Route::get('/report',[ReportController::class,'report'])->name('report');
  Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');

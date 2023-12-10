@@ -22,6 +22,8 @@
             <link rel="stylesheet" href="{{url ('frontend/assets/css/nice-select.css') }}">
             <link rel="stylesheet" href="{{url ('frontend/assets/css/style.css') }}">
 
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
    </head>
 
    <body>
@@ -98,7 +100,7 @@
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{{url ('frontend/./assets/js/plugins.js') }}"></script>
         <script src="{{url ('frontend/./assets/js/main.js') }}"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

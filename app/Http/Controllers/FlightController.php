@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Flight;
 use App\Models\FlightRating;
 use Illuminate\Http\Request;
@@ -66,8 +67,8 @@ class FlightController extends Controller
     }
 
     public function flight(){
-        $flight = Flight::all();
-        return view('frontend.pages.flight',compact('flight'));
+        $products = Category::all();
+        return view('frontend.pages.flight',compact('products'));
     }
 
     public function flightView($id){

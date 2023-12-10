@@ -17,9 +17,16 @@
                 <li><a href="{{route ('hotel.list') }}"><i class="ti-home"></i> Hotel</a>
                 </li>
 
-                </li>
-                <li><a href="{{ route('flight.list') }}"><i class="fas fa-plane"></i>Flight</a>
-                </li>
+
+
+            </li>
+            <li><a href="{{ route('category.list') }}"><i class="fas fa-location"></i>Car Location</a>
+            </li>
+
+
+        </li>
+        <li><a href="{{ route('products.index') }}"><i class="fas fa-car"></i>Car</a>
+        </li>
 
                 <li><a class="sidebar-sub-toggle"><i class="ti-thumb-up"></i> Support Package <span
                     class="sidebar-collapse-icon ti-angle-down"></span></a>

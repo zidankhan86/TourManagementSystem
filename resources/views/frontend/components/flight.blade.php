@@ -17,75 +17,36 @@
 
 
 	<!-- Start Align Area -->
-	<div class="whole-wrap">
-		<div class="container box_1170">
-			<div class="section-top-border">
-				<h3 class="mb-30">Our Flight</h3>
-				<div class="progress-table-wrap">
-					<div class="progress-table">
+	<!-- CategoryWise/1 -->
 
-                        @foreach ($flight as $item)
-
-
-						<div class="table-row card">
-                            <div class="card-body" style="display: flex; flex-direction: row; align-items: center;">
-
-                                <div class=""> <img height="100" width="150" src="{{ url('/uploads/uploads/'.$item->image) }}" alt="flag">
-                                    <div class="featured__item__text">
-
-                                        <div class="star-rating">
-                                            @php
-                                                // Retrieve the product ratings for the current product
-                                                $flight = App\Models\FlightRating::where('flight_id', $item->id)->get();
-
-                                                // Calculate the average rating and limit it to a maximum of 5
-                                                $averageRating = min($flight->avg('rating'), 5);
-
-                                                // Calculate the number of full stars
-                                                $fullStars = floor($averageRating);
-
-                                                // Calculate the presence of a half star
-                                                $hasHalfStar = ($averageRating - $fullStars) >= 0.5;
-                                            @endphp
-
-                                            @for ($i = 1; $i <= 5; $i++)
-                                                @if ($i <= $fullStars)
-                                                    <span class="star" style="font-size: 24px; color: gold;">&#9733;</span>
-                                                @elseif ($hasHalfStar)
-                                                    <span class="star half" style="font-size: 24px; color: gold;">&#9733;</span>
-                                                    @php $hasHalfStar = false; @endphp
-                                                @else
-                                                    <span class="star" style="font-size: 24px; color: gray;">&#9733;</span>
-                                                @endif
-                                            @endfor
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="visit">{{ $item->name }}</div>
-                                <div class="visit"><small> <strong> {{ $item->from }} To  {{ $item->to }}</strong></small></div>
-                                <div class="visit">{{ $item->ticket }} <small class="text danger"> Tickets Remain</small> </div>
-                                <div class="visit"> <small>{{ $item->time }}</small></div>
-                                <div class="visit"> {{ $item->class }}</div>
-                                <div class="visit">{{ $item->date_time }}</div>
-                                <div class="visit"><small> <strong>{{ $item->price }} Tk</small></strong></div>
-                                <div class="visit"><a href="{{ url('/flight/view',$item->id) }}" class="genric-btn success-border circle arrow">SELECT<span
-                                    class="lnr lnr-arrow-right"></span></a></div>
-
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                @foreach ($products as $item)
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <h3 class="text-center py-3">{{ $item->name }}</h3>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{{ url('/uploads/uploads/',$item->image) }}" alt="Product Image" style="width: 100%; height: 200px; object-fit: cover;" />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{ $item->name }}</h5>
+                                <!-- Product price-->
+                                BDT {{ $item->price }}
                             </div>
-                        </div><br><br>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('product.details',$item->id) }}"></i>Details</a></div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 
-                        @endforeach
-
-					</div>
-				</div>
-			</div>
-
-
-
-
-		</div>
-	</div>
-	<!-- End Align Area -->
+	

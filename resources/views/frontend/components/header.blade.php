@@ -42,7 +42,7 @@
                                         <li><a href="{{route('landing.page') }}">Home</a></li>
                                         <li><a href="#">Services</a>
                                             <ul class="submenu">
-                                                <li><a href="{{ url('/flight') }}">Flight</a></li>
+                                                <li><a href="{{ route('product.page') }}">Rent Car</a></li>
                                         <li><a href="{{ url('/hotel') }}">Hotel</a></li>
                                         <li><a href="{{route ('tour.package.page') }}">Tour</a></li>
                                             </ul>

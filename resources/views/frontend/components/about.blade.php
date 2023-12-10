@@ -19,12 +19,12 @@
                 <!-- Section Tittle -->
                 <div class="section-tittle section-tittle2">
                     <span>About Our Company</span>
-                            <h2>MyTrip,where we turn your travel dreams <br>into extraordinary experiences, creating memories that last a lifetime"</h2>
+                            <h2>Tour and Travel,where we turn your travel dreams <br>into extraordinary experiences, creating memories that last a lifetime"</h2>
                 </div>
                 <div class="support-caption">
 
                     <div class="select-suport-items">
-                        <p>At MyTrip, we believe that every journey is a story waiting to be told.Let us be your trusted companion as we curate remarkable travel experiences tailored to your wanderlust</p>
+                        <p>Tour and Travel, we believe that every journey is a story waiting to be told.Let us be your trusted companion as we curate remarkable travel experiences tailored to your wanderlust</p>
                         <div class="select-suport-items">
                             <label class="single-items">Travel opens up world of possiblilities
                                 <input type="checkbox" checked="checked active">
