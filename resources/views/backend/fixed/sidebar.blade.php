@@ -30,7 +30,7 @@
         </li>
 
     </li>
-    <li><a href="#"><i class="fas fa-book"></i>Car Booking</a>
+    <li><a href="{{ route('booking.list.car') }}"><i class="fas fa-book"></i>Car Booking</a>
     </li>
 
 

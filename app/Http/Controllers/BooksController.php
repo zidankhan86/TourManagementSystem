@@ -62,14 +62,12 @@ class BooksController extends Controller
         return redirect()->route('landing.page');
 
     }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    public function bookList(){
 
+        $userBooking = Boks::all();
+
+        return view('backend.pages.order.orderlist',compact('userBooking'));
+    }
     /**
      * Store a newly created resource in storage.
      */

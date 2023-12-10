@@ -132,6 +132,11 @@ Route::post('/product', [ProductController::class,'store'])->name('product');
  //Report
  Route::get('/report',[ReportController::class,'report'])->name('report');
  Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');
+
+ Route::get('/booking-list-car',[BooksController::class,'bookList'])->name('booking.list.car');
+
+
+
 });
 
 });
