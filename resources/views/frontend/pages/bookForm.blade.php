@@ -33,7 +33,7 @@
     <div class="container pt-4">
         <div class="row">
             <div class="col-12 px-4">
-                <h5> Booking Form</h5>
+                <h5 style="text-align: center"> Booking Form</h5>
 
                 <hr class="mt-1" />
             </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-outline">
-                            <input type="text" id="form1" name="name" class="form-control order-form-input" placeholder="Your Name"/>
+                            <input type="text" id="form1" name="name" class="form-control order-form-input" placeholder="Reea"/>
 
                             @error('name')
 
@@ -59,7 +59,7 @@
                     <div class="col-sm-6 mt-2 mt-sm-0">
                         <div class="form-outline">
 
-                            <input type="tel" id="form2" name="phone" class="form-control order-form-input" placeholder="Yor Phone" />
+                            <input type="tel" id="form2" name="phone" class="form-control order-form-input" placeholder="01700000000" />
 
                         </div>
 
@@ -116,7 +116,7 @@
                         <div class="form-group">
                           <label for=""></label>
                           <input type="text"
-                            class="form-control" name="road" id="" aria-describedby="helpId" placeholder="Street Address">
+                            class="form-control" name="road" id="" aria-describedby="helpId" placeholder="road 12,sector12">
 
                         </div>
 
@@ -127,7 +127,7 @@
 
                     <div class="col-sm-6 mt-2 pe-sm-2">
                         <div class="form-outline">
-                            <input type="text" id="form9" name="city" class="form-control order-form-input" placeholder="Enter City Name" />
+                            <input type="text" id="form9" name="city" class="form-control order-form-input" placeholder="Khulna" />
 
                         </div>
                         @error('city')
@@ -136,7 +136,7 @@
                     </div>
                     <div class="col-sm-6 mt-2 ps-sm-0">
                         <div class="form-outline">
-                            <input type="text" name="location" id="form10" class="form-control order-form-input" placeholder="Where to pick" />
+                            <input type="text" name="location" id="form10" class="form-control order-form-input" placeholder="khulna ,road 12,sector 12" />
 
                         </div>
                         @error('location')
@@ -153,9 +153,9 @@
 
                     <div class="col-sm-6 mt-2 pe-sm-2">
                         <br>
-                        <label for="">Enter Hour*</label>
+                        <label for="">Insert the hours* </label>
                         <div class="form-outline">
-                            <input type="number" id="hour" name="hour" class="form-control order-form-input" placeholder="Example: 3" oninput="calculateTotal()" />
+                            <input type="number" id="hour" name="hour" class="form-control order-form-input" placeholder="i.e:2" oninput="calculateTotal()" />
                         </div>
                         @error('hour')
                         <p class="text-danger">{{ $message }}</p>
@@ -164,8 +164,8 @@
                     <div class="col-sm-6 mt-2 ps-sm-0">
                         <br>
                         <div class="form-outline">
-                            <label for="">Pay(BDT)*</label>
-                            <input type="text" id="total" name="total" class="form-control order-form-input" placeholder="Pay" readonly />
+                            <label for="">You have to pay Tk.*</label>
+                            <input type="text" id="total" name="total" class="form-control order-form-input" placeholder="Pay tk." readonly />
                         </div>
                         @error('total')
                         <p class="text-danger">{{ $message }}</p>
@@ -191,9 +191,7 @@
             </div>
 
 
-            {{-- <div>
-                <input type="hidden" name="currency" value="{{ $product->currency }}">
-            </div> --}}
+
             <div>
                 <input type="hidden" name="product_id" value="{{ $product->id }}">
             </div>

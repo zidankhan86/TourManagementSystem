@@ -46,13 +46,13 @@ class HotelController extends Controller
 
     if ($request->hasFile('image')) {
         $hotelImageName = date('YmdHis') . '_' . $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('uploads', $hotelImageName);
+        $request->file('image')->storeAs('uploads', $hotelImageName,'public');
     }
 
     // Handle room image
     if ($request->hasFile('room_image')) {
         $roomImageName = date('YmdHis') . '_' . $request->file('room_image')->getClientOriginalName();
-        $request->file('room_image')->storeAs('uploads', $roomImageName);
+        $request->file('room_image')->storeAs('uploads', $roomImageName,'public');
     }
 
     Hotel::create([

@@ -21,11 +21,9 @@ use App\Http\Controllers\Frontend\TourController as FrontendTourController;
 use App\Http\Controllers\ProductController;
 
 //SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
-Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
 Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
 Route::post('/pay/hotel/{id}', [SslController::class, 'indexHotel'])->name('pay.now.hotel');
-Route::post('/pay/flight/{id}', [SslFlightController::class, 'indexFlight'])->name('pay.now.flight');
 Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/success', [SslController::class, 'successful']);
@@ -75,8 +73,8 @@ Route::get('/product/details/{id}',[ProductController::class,'productDetails'])-
 Route::get('/categoryWise/{id}',[CategoryController::class,'CatWise'])->name('category.wise');
 
 //Backend
+Route::group(['middleware'=>'admin'],function(){
 
- Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  //Booking Frontend
  Route::get('/booking/{id}',[BooksController::class,'index'])->name('booking');
 Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('booking.store');
@@ -84,10 +82,9 @@ Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('boo
  Route::get('/tour/book/now/{id}',[FrontendTourController::class,'bookNow'])->name('tour.book.now');
  Route::post('/tour/book/store',[FrontendTourController::class,'bookNowStore'])->name('tour.book.now.store');
  Route::get('/hotel/book/now/{id}',[FrontendTourController::class,'hotelNow'])->name('hotel.book.now');
- Route::get('/flightBook/{id}',[FlightController::class,'bookFlight'])->name('book.flight');
 
 
- Route::group(['middleware'=>'admin'],function(){
+    Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
  //Tour
  Route::get('/',[HomeController::class,'home'])->name('home');
  Route::get('/tour/list',[TourController::class,'tourList'])->name('tour.list');

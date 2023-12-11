@@ -32,7 +32,7 @@ class TourSupportController extends Controller
         if($request->hasFile('image')){
 
            $imageName = date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
-           $request->file('image')->storeAs('/uploads',$imageName);
+           $request->file('image')->storeAs('/uploads',$imageName,'public');
         }
 
         TourSupport::create([

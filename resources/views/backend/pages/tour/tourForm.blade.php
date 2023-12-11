@@ -2,6 +2,16 @@
 @section('main')
 
 
+
+<div class="container">
+    <div class="container">
+        <div class="container">
+
+
+
+
+
+
   <div class="row">
     <div class="col-lg-12">
         <h4 style="text-align: center">Tour Form</h4>
@@ -17,23 +27,23 @@
 
                         <div class="form-group">
                           <label for="exampleInputName">Enter Tittle</label>
-                          <input type="text" name="tittle" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
+                          <input type="text" name="tittle" class="form-control" id="" aria-describedby="emailHelp" placeholder="Winter wild tour... ">
 
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName3">Enter Location</label>
-                            <input type="text" name="location" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
+                            <input type="text" name="location" class="form-control" id="" aria-describedby="emailHelp" placeholder="Shundarban... ">
 
                           </div>
                         <div class="form-group">
                             <label for="exampleInputPrice">Enter Price</label>
-                            <input type="number" name="price" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
+                            <input type="number" name="price" class="form-control" id="" aria-describedby="emailHelp" placeholder="1000.. ">
 
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleInputPrice">Enter Sit</label>
-                            <input type="number" name="seat_count" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
+                            <label for="exampleInputPrice">Maximum tourist limit</label>
+                            <input type="number" name="seat_count" class="form-control" id="" aria-describedby="emailHelp" placeholder="50... ">
                           </div>
 
                           <div class="form-group">
@@ -48,7 +58,7 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="">Enter Image</label>
+                            <label for="">Select Image</label>
                             <input type="file" name="image" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter ">
 
                           </div>
@@ -69,6 +79,9 @@
         </div>
     </div>
 
+</div>
+</div>
+</div>
 </div>
 
 @endsection

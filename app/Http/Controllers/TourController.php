@@ -44,10 +44,9 @@ class TourController extends Controller
 
 
         $imageName = null;
-        if($request->hasFile('image')){
-
-           $imageName = date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
-           $request->file('image')->storeAs('/uploads',$imageName);
+        if ($request->hasFile('image')) {
+            $imageName = date('YmdHis') . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('uploads', $imageName, 'public');
         }
 
         //dd('$request->all()');
@@ -84,12 +83,7 @@ class TourController extends Controller
     }
     public function tourUpdate(Request $request ,$id){
 
-        $request->validate([
-
-            "tittle"=>'required',
-            "price"=>'required',
-            "description"=>'required',
-            "location"=>'required']);
+// dd($request->all());
 
     $tourUpdate = Tour::find($id);
     $imageName = null;
@@ -109,6 +103,7 @@ class TourController extends Controller
         "from_date"=>$request->from_date,
         "to_date"=>$request->to_date
     ]);
+    Alert::success('Success','edited');
     return redirect()->back();
 }
 

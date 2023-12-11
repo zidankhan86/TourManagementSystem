@@ -30,7 +30,7 @@
         </li>
 
     </li>
-    <li><a href="{{ route('booking.list.car') }}"><i class="fas fa-book"></i>Car Booking</a>
+    <li><a href="{{ route('booking.list.car') }}"><i class="fas fa-book"></i>Car Booking List</a>
     </li>
 
 
@@ -39,12 +39,12 @@
                 <ul>
 
                 <li><a href="{{route ('tour.support.form') }}"><i class="ti-plus"></i> Add Support Package</a></li>
-                <li><a href="{{route ('tour.support.list') }}"><i class="ti-list"></i> Support Package List</a></li>
+                <li><a href="{{route ('tour.support.list') }}"><i class="fas fa-book"></i> Support Package List</a></li>
                 </ul>
                 </li>
-                <li><a href="{{route ('booking.list') }}"><i class="ti-list-ol"></i>Tour Booking List</a></li>
-                <li><a href="{{ route('booking.hotel') }}"><i class="ti-list-ol"></i>Hotel Booking List</a></li>
-                <li><a href="{{ route('booking.flight') }}"><i class="ti-list-ol"></i>Flight Booking List</a></li>
+                <li><a href="{{route ('booking.list') }}"><i class="fas fa-book"></i>Tour Booking List</a></li>
+                <li><a href="{{ route('booking.hotel') }}"><i class="fas fa-book"></i>Hotel Booking List</a></li>
+
 
                 <li><a class="sidebar-sub-toggle"><i class="fas fa-book"></i> Report <span
                     class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -52,7 +52,7 @@
 
                 <li><a href="{{route ('report') }}"><i class="ti-car"></i>Tour Report</a></li>
                 <li><a href="#"><i class="ti-home"></i> Hotel Report</a></li>
-                <li><a href="#"><i class="fas fa-plane"></i> Flight Report</a></li>
+
                 </ul>
                 </li>
                 <li><a href="{{route ('logout') }}" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
