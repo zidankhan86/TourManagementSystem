@@ -131,10 +131,9 @@ public function CustomerProfile(){
     $bookTour = Book::with('BookRelation','UserRelation')->where('user_id',auth()->user()->id)->get();
     //hotel
     $bookHotel = HotelBook::with('HotelBook','UserRelation')->where('user_id',auth()->user()->id)->get();
-    //Flight
-    $bookFlight = FlightBook::with('FlightBook','UserRelation')->where('user_id',auth()->user()->id)->get();
 
-    return view('backend.pages.profile.profileCustomer' ,compact('bookTour','bookHotel','bookFlight'));
+
+    return view('backend.pages.profile.profileCustomer' ,compact('bookTour','bookHotel'));  
 }
 
 public function storeRating(Request $request, $id)
