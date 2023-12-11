@@ -133,7 +133,7 @@ public function CustomerProfile(){
     $bookHotel = HotelBook::with('HotelBook','UserRelation')->where('user_id',auth()->user()->id)->get();
 
 
-    return view('backend.pages.profile.profileCustomer' ,compact('bookTour','bookHotel'));  
+    return view('backend.pages.profile.profileCustomer' ,compact('bookTour','bookHotel'));      
 }
 
 public function storeRating(Request $request, $id)
