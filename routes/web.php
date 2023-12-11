@@ -73,7 +73,7 @@ Route::get('/product/details/{id}',[ProductController::class,'productDetails'])-
 Route::get('/categoryWise/{id}',[CategoryController::class,'CatWise'])->name('category.wise');
 
 //Backend
-Route::group(['middleware'=>'admin'],function(){
+Route::group(['middleware'=>'auth'],function(){
 
  //Booking Frontend
  Route::get('/booking/{id}',[BooksController::class,'index'])->name('booking');
@@ -105,7 +105,7 @@ Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('boo
  //Booking
  Route::get('/booking/list',[TourController::class,'bookingList'])->name('booking.list');
 
- Route::get('/booking/flight',[FlightController::class,'bookingListFlight'])->name('booking.flight');
+
  Route::get('/booking/hotel',[HotelController::class,'bookingListHotel'])->name('booking.hotel');
 
  Route::get('/my/profile',[TourController::class,'myProfile'])->name('my.profile');
