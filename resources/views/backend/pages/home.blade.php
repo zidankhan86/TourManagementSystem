@@ -81,8 +81,8 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="fas fa-plane color-danger border-danger"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Total Flight</div>
-                                <div class="stat-digit">{{ $totalFlight }}</div>
+                                <div class="stat-text">Total </div>
+                                <div class="stat-digit">0</div>
                             </div>
                         </div>
                     </div>
@@ -104,8 +104,8 @@
                             <div class="stat-icon dib"><i class="fas fa-plane color-pink border-pink"></i>
                             </div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Flight Booking</div>
-                                <div class="stat-digit">{{ $totalFlightBook }}</div>
+                                <div class="stat-text"> Booking</div>
+                                <div class="stat-digit">0</div>
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Hotel Booking</div>
-                                <div class="stat-digit">{{ $totalFlightBook }}</div>
+                                <div class="stat-digit">0</div>
                             </div>
                         </div>
                     </div>

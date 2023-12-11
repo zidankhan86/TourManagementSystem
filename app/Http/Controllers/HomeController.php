@@ -19,13 +19,12 @@ class HomeController extends Controller
         $totalSupportTour = TourSupport::get()->count();
         $totalUser = User::get()->count();
         $totalBooking =Book::get()->count();
-        $totalFlight =Flight::get()->count();
         $totalHotel =Hotel::get()->count();
         $totalHotelBook =HotelBook::get()->count();
-        $totalFlightBook =FlightBook::get()->count();
 
-        return view('backend.pages.home',compact('totalTour','totalSupportTour','totalUser','totalBooking',
-        'totalFlight','totalHotel','totalHotelBook','totalFlightBook'));
+
+        return view('backend.pages.home',compact('totalTour','totalSupportTour','totalUser','totalBooking'
+        ,'totalHotel','totalHotelBook'));
     }
     public function search(Request $request)
     {
