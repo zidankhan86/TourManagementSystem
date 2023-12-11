@@ -199,22 +199,7 @@ mark {
         @endforeach
 
 
-        @foreach ($bookFlight as $item)
-        <ul style="list-style: none; padding: 0; text-align: left;">
-            <li>
-                <strong>Booking Name -</strong> - {{ $item->FlightBook->name }}<br>
-                <strong>Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
-                <span>Placed on: {{ $item->created_at }}</span><br>
-                <strong>Transaction No</strong> - {{ $item->transaction_id }}<br>
-            </li>
-            <p>Order Status -<small>{{ $item->status }}</small></p>
-            @if($item->status == 'Pending')
-            <a href="{{ route('cancel.flight', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Booking</a>
-        @elseif($item->status == 'Canceled')
-            <button class="genric-btn danger circle">Order Canceled</button>
-        @endif
-        </ul> <hr>
-        @endforeach
+      
 
 
                 </div>

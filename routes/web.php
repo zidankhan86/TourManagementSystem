@@ -84,7 +84,7 @@ Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('boo
  Route::get('/hotel/book/now/{id}',[FrontendTourController::class,'hotelNow'])->name('hotel.book.now');
 
 
-    Route::group(['middleware'=>'auth','admin','prefix'=>'admin'],function(){
+    Route::group(['middleware'=>'admin','prefix'=>'admin'],function(){
  //Tour
  Route::get('/',[HomeController::class,'home'])->name('home');
  Route::get('/tour/list',[TourController::class,'tourList'])->name('tour.list');
@@ -114,11 +114,7 @@ Route::post('/booking-store',[BooksController::class,'bookingStore'])->name('boo
  Route::post('/hotelStore',[HotelController::class,'hotelStore'])->name('hotel.store');
  Route::get('/hotel/delete/{id}',[HotelController::class,'hotelDelete'])->name('hotel.delete');
  Route::get('/list',[HotelController::class,'hotelList'])->name('hotel.list');
- //Flight
- Route::get('/flightForm',[FlightController::class,'flightForm'])->name('flight.form');
- Route::post('/flightStore',[FlightController::class,'flightStore'])->name('flight.Store');
- Route::get('/delete/{id}',[FlightController::class,'flightDelete'])->name('flight.delete');
- Route::get('/flightList',[FlightController::class,'flightList'])->name('flight.list');
+
 //Car
 Route::get('/product', [ProductController::class,'index'])->name('products.index');
 Route::post('/product', [ProductController::class,'store'])->name('product');
