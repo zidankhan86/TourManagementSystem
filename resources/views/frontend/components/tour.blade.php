@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title text-center">
-                    <span>FEATURED TOUR Packages</span>
+                    <span>FEATURED TOUR PACKAGES</span>
                     <h2>Favourite Places</h2>
                 </div>
             </div>

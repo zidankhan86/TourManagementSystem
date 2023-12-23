@@ -83,7 +83,7 @@ h4 {
         <div class="col-md-offset-5 col-md-4 text-center">
             <h1 class='text-white'>Tour Management System</h1>
               <div class="form-login"></br>
-                <a class="btn btn-success" href="{{ url('/') }}">Go Home</a>
+                <a class="btn btn-info" href="{{ url('/') }}">Go Home</a>
                 <h4>Secure Login </h4>
                 </br>
                 <input type="email" id="userEmail" name="email" class="form-control input-sm chat-input" placeholder="Email"/>
@@ -97,7 +97,7 @@ h4 {
                 </br></br>
                 <div class="wrapper">
                         <span class="group-btn">
-                           <button type="submit" class="btn btn-danger">Login</button>
+                           <button type="submit" class="btn btn-info">Login</button>
                         </span>
                 </div>
             </div>
