@@ -42,14 +42,10 @@ class HomeController extends Controller
         ->orWhere('rent', 'LIKE', '%' . $searchKey . '%')
         ->get();
 
-    // Search in the Flight model (adjust as needed)
-    $flightResults = Flight::where('name', 'LIKE', '%' . $searchKey . '%')
-        ->orWhere('from', 'LIKE', '%' . $searchKey . '%')
-        ->orWhere('date_time', 'LIKE', '%' . $searchKey . '%')
-        ->get();
+    
 
     // Return the results to the Blade view
-    return view('frontend.pages.search', compact('tourResults', 'hotelResults', 'flightResults','searchKey'));
+    return view('frontend.pages.search', compact('tourResults', 'hotelResults','searchKey'));
 }
 
 }
