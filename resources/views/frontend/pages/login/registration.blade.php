@@ -79,7 +79,7 @@
 <div class="col-md-4 col-md-offset-4" id="login">
 						<section id="inner-wrapper" class="login">
 							<article>
-                                <p>Register <a href="{{ url('/') }}" class="btn btn-success">Go Home</a></p>
+                                <p>Register <a href="{{ url('/') }}" class="btn btn-info">Go Home</a></p>
 								<form action="{{route('registration.website.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
 									<div class="form-group">
@@ -116,7 +116,7 @@
                                             <input type="hidden" name="role">
                                         </div>
 									</div>
-									  <button type="submit" class="btn btn-success btn-block">Submit</button>
+									  <button type="submit" class="btn btn-info btn-block">Submit</button>
 								</form>
 							</article>
 						</section></div>
