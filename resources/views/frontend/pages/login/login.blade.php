@@ -1,12 +1,9 @@
 <style>
-  
 body {
   background-image:url('https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_1280.jpg');
   background-position:center;
   background-size:cover;
-
 }
-
 .container {
     padding: 110px;
 }
@@ -49,7 +46,6 @@ h4 {
 }
 
 </style>
-
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -109,8 +105,6 @@ h4 {
     </div>
     </br></br></br>
     <!--footer-->
-
-    <!--//footer-->
 </div>
 </form>
 </body>
