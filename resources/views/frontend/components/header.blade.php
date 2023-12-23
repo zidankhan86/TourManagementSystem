@@ -64,8 +64,8 @@
                                        @endif
 
                                        @else
-                                        <li><a href="{{route ('login') }}" style="color: brown">SignIn</a></li>
-                                        <li><a href="{{route ('registration.website') }}" style="color: blueviolet">SignUp</a></li>
+                                        <li><a href="{{route ('login') }}" style="color: blue;">SignIn</a></li>
+                                        <li><a href="{{route ('registration.website') }}" style="color: blue">SignUp</a></li>
 
                                         @endauth
                                     </ul>
