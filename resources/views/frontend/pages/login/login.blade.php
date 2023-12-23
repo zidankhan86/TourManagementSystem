@@ -1,24 +1,16 @@
 <style>
-    /*author:starttemplate*/
-/*reference site : starttemplate.com*/
+  
 body {
   background-image:url('https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_1280.jpg');
   background-position:center;
   background-size:cover;
 
-  -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto,arial,sans-serif;
-  font-family: 'Dancing Script', cursive!important;
 }
 
 .container {
     padding: 110px;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #ffffff!important;
-    opacity: 1; /* Firefox */
-    font-size:18px!important;
-}
+
 .form-login {
     background-color: rgba(0,0,0,0.55);
     padding-top: 10px;
@@ -55,9 +47,7 @@ h4 {
 .wrapper {
     text-align: center;
 }
-.footer p{
-    font-size: 18px;
-}
+
 </style>
 
 
