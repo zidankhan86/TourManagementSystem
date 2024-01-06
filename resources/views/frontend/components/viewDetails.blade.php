@@ -47,7 +47,7 @@
                                 <!-- Details -->
                                 <div style="flex: 1; padding: 10px; cursor: pointer; transition: background-color 0.3s ease;" id="detailsOption">
                                     <p style="color: black">Details</p>
-                                    <p>{{ $toursData->description }}</p>
+                                    <p style="color: black;">{{ $toursData->description }}</p>
                                 </div>
 
                                 {{-- <!-- Options -->

@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-body">
 
-                            <p>Our hotel provides various facilities such as a swimming pool, spa, and gym.</p>
+                            <p style="color: black;">{{ $hotels->description }}</p>
 
                             <a href="" style="color: rgb(61, 61, 156)"> <small>see more</small></a>
                         </div>
