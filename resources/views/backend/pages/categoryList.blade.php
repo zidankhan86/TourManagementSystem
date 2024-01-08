@@ -31,7 +31,7 @@
                         <td data-label="Name" ><img height="100" width="100" src="{{url('/uploads/uploads/',$item->image)}}" alt=""></td>
                   <td>
                     <div class="btn-list flex-nowrap">
-                      <a href="#" class="btn">
+                      <a href="{{route('category.delete',$item->id)}}" class="btn btn-danger">
                         Delete
                       </a>
                       <div class="dropdown">

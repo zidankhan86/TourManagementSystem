@@ -122,6 +122,7 @@ Route::post('/product', [ProductController::class,'store'])->name('product');
     Route::get('/category-list',[CategoryController::class,'list'])->name('category.list');
     Route::get('/category-form',[CategoryController::class,'form'])->name('category.form');
     Route::post('/category-store',[CategoryController::class,'store'])->name('category.store');
+    Route::get('/category/delete/{id}',[HotelController::class,'categoryDelete'])->name('category.delete');
  //Report
  Route::get('/report',[ReportController::class,'report'])->name('report');
  Route::get('/report/search',[ReportController::class,'reportSearch'])->name('order.report.search');

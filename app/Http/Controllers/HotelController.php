@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Hotel;
 use App\Models\HotelRating;
 use Illuminate\Http\Request;
@@ -112,6 +113,13 @@ public function hotelDelete($id){
 public function bookingListHotel(){
     $hotel = Hotel::all();
     return view('backend.pages.book.hotelBooking',compact('hotel'));
+}
+
+public function categoryDelete($id){
+    $delete= Category::find($id);
+    $delete->delete();
+    Alert::success('Deleted Successfully');
+    return back();
 }
 
 }
