@@ -24,7 +24,7 @@
                 <div class="support-caption">
 
                     <div class="select-suport-items">
-                        <p>Tour and Travel, we believe that every journey is a story waiting to be told.Let us be your trusted companion as we curate remarkable travel experiences tailored to your wanderlust</p>
+                        <p style="color: black;">Tour and Travel, we believe that every journey is a story waiting to be told.Let us be your trusted companion as we curate remarkable travel experiences tailored to your wanderlust</p>
                         <div class="select-suport-items">
                             <label class="single-items">Travel opens up world of possiblilities
                                 <input type="checkbox" checked="checked active">

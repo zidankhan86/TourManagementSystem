@@ -139,19 +139,19 @@ mark {
                         <div class="col-md-6">
                             <div class="media">
                                 <label>Name</label>
-                                <p>{{ (auth()->user()->name) }}</p>
+                                <p style="color: blue;">{{ (auth()->user()->name) }}</p>
                             </div>
                             <div class="media">
                                 <label>Phone</label>
-                                <p>{{ (auth()->user()->phone) }}</p>
+                                <p style="color: blue;">{{ (auth()->user()->phone) }}</p>
                             </div>
                             <div class="media">
                                 <label>Email</label>
-                                <p>{{ (auth()->user()->email) }}</p>
+                                <p style="color: blue;">{{ (auth()->user()->email) }}</p>
                             </div>
                             <div class="media">
                                 <label>Address</label>
-                                <p>{{ (auth()->user()->address) }}</p>
+                                <p style="color: blue;">{{ (auth()->user()->address) }}</p>
                             </div>
                         </div>
 
@@ -165,16 +165,16 @@ mark {
 
         <ul style="list-style: none; padding: 0; text-align: left;">
             <li>
-                <strong>Booking Name -</strong> - {{ $item->BookRelation->tittle }}<br>
-                <strong>Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
-                <span>Placed on: {{ $item->created_at }}</span><br>
-                <strong>Transaction No</strong> - {{ $item->transaction_id }}<br>
+                <strong style="color: blue;">Booking Name -</strong> - {{ $item->BookRelation->tittle }}<br>
+                <strong style="color: blue;">Order id: #{{ $item->amount }}{{ $item->id }}67890</strong> - BDT {{ $item->amount }}<br>
+                <span style="color: blue;">Placed on: {{ $item->created_at }}</span><br>
+                <strong style="color: blue;">Transaction No</strong> - {{ $item->transaction_id }}<br>
             </li>
-            <p>Order Status -<small>{{ $item->status }}</small></p>
+            <p style="color: blue;">Order Status -<small style="color: blue;">{{ $item->status }}</small></p>
             @if($item->status == 'Pending')
             <a href="{{ route('cancel.tour', $item->id) }}" style="color: black" class="genric-btn danger circle">Cancel Booking</a>
         @elseif($item->status == 'Canceled')
-            <button class="genric-btn danger circle">Order Canceled</button>
+            <button class="genric-btn danger circle" style="color: blue;">Order Canceled</button>
         @endif
         </ul> <hr>
         @endforeach

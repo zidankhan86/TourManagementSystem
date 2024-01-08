@@ -79,10 +79,13 @@
                 <div class="col-lg-3">
                     <div class="card">
                         <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="fas fa-plane color-danger border-danger"></i></div>
+                            <div class="stat-icon dib"><i class="fas fa-car color-warning border-danger"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Total </div>
-                                <div class="stat-digit">0</div>
+                                <div class="stat-text">Total Car Rent</div>
+                                @php
+                                    $totalCarRent=App\Models\Product::count();
+                                @endphp
+                                <div class="stat-digit">{{$totalCarRent}}</div>
                             </div>
                         </div>
                     </div>
@@ -104,8 +107,11 @@
                             <div class="stat-icon dib"><i class="fas fa-plane color-pink border-pink"></i>
                             </div>
                             <div class="stat-content dib">
-                                <div class="stat-text"> Booking</div>
-                                <div class="stat-digit">0</div>
+                                <div class="stat-text">Car Booking</div>
+                                @php
+                                    $totalCarRentBook=App\Models\Boks::count();
+                                @endphp
+                                <div class="stat-digit">{{$totalCarRentBook}}</div>
                             </div>
                         </div>
                     </div>
@@ -117,7 +123,10 @@
                             </div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Hotel Booking</div>
-                                <div class="stat-digit">0</div>
+                                @php
+                                    $totalHotelBook=App\Models\HotelBook::count();
+                                @endphp
+                                <div class="stat-digit">{{$totalHotelBook}}</div>
                             </div>
                         </div>
                     </div>
